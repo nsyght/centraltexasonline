@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#1D4E89">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>Best of Pflugerville, TX &mdash; Local Business Directory | CentralTexas.online</title>
+  <meta name="description" content="Discover the best local businesses in Pflugerville, TX &mdash; top-rated restaurants, dentists, auto shops, gyms, and more on CentralTexas.online.">
+  <style>
+    :root{--primary:#1D4E89;--primary-dark:#0F2D54;--primary-light:#3A6DB5;--primary-pale:#E8F0FB;--accent:#E8821A;--accent-dark:#C06A0E;--accent-pale:#FEF3E7;--dark:#0A1628;--dark2:#122040;--white:#FFFFFF;--gray-50:#F7F9FC;--gray-100:#EDF1F8;--gray-200:#D5DEF0;--text:#0A1628;--text-muted:#4A5A7A;--radius:10px;--shadow:0 2px 12px rgba(0,0,0,.07);--shadow-lg:0 8px 32px rgba(0,0,0,.13);}
+    *{box-sizing:border-box;margin:0;padding:0;}body{font-family:'Inter',sans-serif;background:var(--gray-50);color:var(--text);}a{color:inherit;text-decoration:none;}
+    .site-header{background:var(--dark);position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.3);}
+    .header-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;gap:20px;height:64px;}
+    .site-logo{display:flex;align-items:center;gap:10px;font-size:1.2rem;font-weight:800;color:var(--white);white-space:nowrap;}
+    .site-logo b{color:var(--accent);}.header-nav{display:flex;align-items:center;gap:4px;flex:1;flex-wrap:wrap;}
+    .header-nav a{color:rgba(255,255,255,.8);font-size:.82rem;font-weight:500;padding:6px 10px;border-radius:6px;transition:color .2s,background .2s;}
+    .header-nav a:hover{color:var(--white);background:rgba(255,255,255,.1);}
+    .header-nav .btn-add{margin-left:auto;background:var(--accent);color:var(--white)!important;padding:8px 14px;border-radius:8px;font-weight:700;font-size:.82rem;}
+    .burger{display:none;cursor:pointer;color:var(--white);font-size:1.4rem;margin-left:auto;}
+    .site-footer{background:var(--dark);color:rgba(255,255,255,.7);margin-top:60px;}
+    .footer-inner{max-width:1200px;margin:0 auto;padding:48px 20px 20px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;}
+    .footer-brand .logo{font-size:1.1rem;font-weight:800;color:var(--white);margin-bottom:10px;}.footer-brand .logo b{color:var(--accent);}
+    .footer-brand p{font-size:.85rem;line-height:1.6;}.footer-col h4{color:var(--white);font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px;}
+    .footer-col a{display:block;font-size:.85rem;color:rgba(255,255,255,.6);padding:3px 0;}.footer-col a:hover{color:var(--accent);}
+    .footer-bottom{max-width:1200px;margin:0 auto;padding:16px 20px;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;font-size:.78rem;color:rgba(255,255,255,.4);}
+    @media(max-width:900px){.footer-inner{grid-template-columns:1fr 1fr;}}
+    @media(max-width:640px){.header-nav{display:none;flex-direction:column;position:absolute;top:64px;left:0;right:0;background:var(--dark2);padding:12px 20px 20px;gap:4px;}.header-nav.open{display:flex;}.header-nav .btn-add{margin-left:0;text-align:center;}.burger{display:block;}.footer-inner{grid-template-columns:1fr;gap:24px;}}
+    .city-hero{color:var(--white);padding:64px 20px;text-align:center;position:relative;overflow:hidden;}
+    .city-hero::before{content:attr(data-emoji);font-size:220px;opacity:.06;position:absolute;right:-20px;top:-30px;line-height:1;pointer-events:none;}
+    .city-hero .eyebrow{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.16em;color:var(--accent);margin-bottom:12px;}
+    .city-hero h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:800;line-height:1.1;margin-bottom:14px;}
+    .city-hero p{font-size:1.02rem;opacity:.87;max-width:580px;margin:0 auto 28px;line-height:1.65;}
+    .city-stats{display:flex;justify-content:center;gap:36px;flex-wrap:wrap;}
+    .cstat .num{font-size:1.6rem;font-weight:800;color:var(--accent);}
+    .cstat .lbl{font-size:.7rem;opacity:.65;text-transform:uppercase;letter-spacing:.07em;}
+    .section{max-width:1200px;margin:0 auto;padding:48px 20px 0;}
+    .section-title{font-size:1.25rem;font-weight:800;margin-bottom:20px;display:flex;align-items:center;gap:12px;}
+    .section-title::after{content:'';flex:1;height:2px;background:var(--gray-200);}
+    .biz-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;margin-bottom:48px;}
+    .card{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);display:flex;flex-direction:column;overflow:hidden;transition:transform .2s,box-shadow .2s;border-top:3px solid var(--primary);}
+    .card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg);}
+    .card-icon{font-size:2rem;padding:18px 18px 0;}.card-body{padding:10px 18px;flex:1;}
+    .cat-badge{font-size:.7rem;font-weight:700;padding:3px 10px;border-radius:20px;text-transform:uppercase;letter-spacing:.04em;display:inline-block;margin-bottom:5px;}
+    .card-city{font-size:.72rem;color:var(--text-muted);font-weight:500;margin-bottom:3px;}
+    .card-name{font-size:1rem;font-weight:700;margin:3px 0 6px;}.card-name a{color:var(--text);}.card-name a:hover{color:var(--primary);}
+    .card-desc{font-size:.82rem;color:var(--text-muted);line-height:1.55;margin-bottom:10px;}
+    .tag{background:var(--primary-pale);color:var(--primary-dark);font-size:.7rem;padding:3px 9px;border-radius:20px;font-weight:600;display:inline-block;margin:2px;}
+    .card-cta{display:block;text-align:center;padding:10px;background:var(--gray-50);color:var(--primary);font-weight:700;font-size:.84rem;border-top:1px solid var(--gray-200);transition:background .2s;}
+    .card-cta:hover{background:var(--primary);color:var(--white);}
+    .city-guide{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);padding:28px 32px;margin-bottom:36px;}
+    .city-guide h2{font-size:1.1rem;font-weight:800;color:var(--primary);margin-bottom:14px;}
+    .city-guide p{line-height:1.8;color:var(--text-muted);font-size:.94rem;margin-bottom:12px;}
+    .cat-nav{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0;}
+    .cat-pill{background:var(--primary-pale);color:var(--primary-dark);font-size:.84rem;font-weight:600;padding:8px 16px;border-radius:50px;transition:all .2s;}
+    .cat-pill:hover{background:var(--primary);color:var(--white);}
+    .cta-band{background:linear-gradient(90deg,var(--primary-dark),var(--primary));color:var(--white);text-align:center;padding:56px 20px;margin-top:60px;}
+    .cta-band h2{font-size:1.7rem;font-weight:800;margin-bottom:10px;}
+    .cta-band p{opacity:.88;margin-bottom:24px;}
+    .btn-white{display:inline-block;background:var(--white);color:var(--primary);font-weight:800;padding:13px 36px;border-radius:50px;font-size:1rem;}
+    .breadcrumb{max-width:1200px;margin:20px auto 0;padding:0 20px;font-size:.84rem;color:var(--text-muted);}
+    .breadcrumb a{color:var(--primary);font-weight:600;}
+    @media(max-width:600px){.biz-grid{grid-template-columns:1fr;}.city-stats{gap:20px;}}
+  </style>
+  <link rel="canonical" href="https://centraltexas.online/pflugerville.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Best of Pflugerville, TX &mdash; Local Business Directory | CentralTexas.online">
+  <meta property="og:description" content="Discover the best local businesses in Pflugerville, TX &mdash; top-rated restaurants, dentists, auto shops, gyms, and more on CentralTexas.online.">
+  <meta property="og:url" content="https://centraltexas.online/pflugerville.html">
+  <meta property="og:site_name" content="CentralTexas.online">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Best of Pflugerville, TX &mdash; Local Business Directory | CentralTexas.online">
+  <meta name="twitter:description" content="Discover the best local businesses in Pflugerville, TX &mdash; top-rated restaurants, dentists, auto shops, gyms, and more on CentralTexas.online.">
+<style>
+.crosslink-band{background:var(--primary-pale,#E8F0FB);padding:20px;margin-top:8px;border-top:1px solid var(--gray-200,#D5DEF0);}
+.crosslink-band-inner{max-width:1200px;margin:0 auto;}
+.crosslink-band h4{font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--primary,#1D4E89);margin-bottom:10px;}
+.crosslink-band .cl-pills{display:flex;flex-wrap:wrap;gap:8px;}
+.crosslink-band .cl-pill{background:#fff;border:1.5px solid var(--primary,#1D4E89);border-radius:20px;padding:5px 14px;font-size:.8rem;font-weight:600;color:var(--primary,#1D4E89);}
+.crosslink-band .cl-pill:hover{background:var(--primary,#1D4E89);color:#fff;}
+</style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/index.html" class="site-logo">&#x1F920;&nbsp;<b>CentralTexas</b>.online</a>
+      <nav class="header-nav" id="mainNav">
+        <a href="/index.html">Directory</a>
+        <a href="/blog.html">Blog</a>
+        <a href="/events.html">Events</a>
+        <a href="/deals.html">Deals</a>
+        <a href="/spotlight.html">Spotlight</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/add-listing.html" class="btn-add">+ Free Listing</a>
+      </nav>
+      <button class="burger" onclick="document.getElementById('mainNav').classList.toggle('open')">&#9776;</button>
+    </div>
+  </header>
+<div class="breadcrumb"><a href="/index.html">&#8592; Directory</a> &rsaquo; Pflugerville, TX</div>
+<div class="city-hero" data-emoji="&#x1F30A;" style="background:linear-gradient(135deg,#0A1628 0%,#1B3A5C 55%,#1D4E89 100%);">
+  <div class="eyebrow">&#128205; Pflugerville, Texas</div>
+  <h1>Northeast Austin's Fastest-Growing Community</h1>
+  <p>Pflugerville has grown from a small farming community into a full-fledged city with excellent schools, beautiful Lake Pflugerville, and a thriving local business scene northeast of Austin.</p>
+  <div class="city-stats">
+    <div class="cstat"><div class="num">75,000+</div><div class="lbl">Population</div></div>
+    <div class="cstat"><div class="num">7+</div><div class="lbl">Listed Businesses</div></div>
+    <div class="cstat"><div class="num">1849</div><div class="lbl">Founded</div></div>
+    <div class="cstat"><div class="num">Travis</div><div class="lbl">County</div></div>
+  </div>
+</div>
+<div class="section">
+  <div class="city-guide">
+    <h2>About Pflugerville</h2>
+    <p>Pflugerville sits in a sweet spot northeast of Austin &mdash; close enough for easy commuting, far enough for affordable housing and a distinct community identity. The city is served by Pflugerville ISD, known for strong academics and athletics. Lake Pflugerville is the crown jewel of the parks system. The business corridor along FM 685 and Pecan Street continues to grow with both national retailers and standout local businesses.</p>
+    <div class="cat-nav"><a href="/index.html?cat=Food+&+Dining#pflugerville" class="cat-pill">Food & Dining</a><a href="/index.html?cat=Auto+&+Repair#pflugerville" class="cat-pill">Auto & Repair</a><a href="/index.html?cat=Health+&+Medical#pflugerville" class="cat-pill">Health & Medical</a><a href="/index.html?cat=Pet+Care#pflugerville" class="cat-pill">Pet Care</a></div>
+  </div>
+  <div class="section-title">Top Businesses in Pflugerville</div>
+  <div class="biz-grid">
+    <article class="card">
+      <div class="card-icon">&#x1F356;</div>
+      <div class="card-body">
+        <div class="cat-badge" style="background:#C0392B15;color:#C0392B">Food & Dining</div>
+        <div class="card-city">&#128205; Pflugerville, TX</div>
+        <h3 class="card-name"><a href="/businesses/brothertons-black-iron-bbq-pflugerville.html">Brotherton's Black Iron BBQ</a></h3>
+        <p class="card-desc">4.6 stars, 1,824 reviews. Post-oak smoked brisket and house-made sausage.</p>
+        <div><span class="tag">BBQ</span><span class="tag">4.6&#9733; Rated</span></div>
+      </div>
+      <a href="/businesses/brothertons-black-iron-bbq-pflugerville.html" class="card-cta">View Details &#8594;</a>
+    </article>
+    <article class="card">
+      <div class="card-icon">&#x1F527;</div>
+      <div class="card-body">
+        <div class="cat-badge" style="background:#2980B915;color:#2980B9">Auto & Repair</div>
+        <div class="card-city">&#128205; Pflugerville, TX</div>
+        <h3 class="card-name"><a href="/businesses/longs-automotive-pflugerville.html">Long's Automotive</a></h3>
+        <p class="card-desc">Perfect 5.0 stars from 600+ customers. Dealership-level quality at independent shop prices.</p>
+        <div><span class="tag">Auto Repair</span><span class="tag">5.0&#9733; Perfect</span></div>
+      </div>
+      <a href="/businesses/longs-automotive-pflugerville.html" class="card-cta">View Details &#8594;</a>
+    </article>
+    <article class="card">
+      <div class="card-icon">&#x1F527;</div>
+      <div class="card-body">
+        <div class="cat-badge" style="background:#2980B915;color:#2980B9">Auto & Repair</div>
+        <div class="card-city">&#128205; Pflugerville, TX</div>
+        <h3 class="card-name"><a href="/businesses/central-texas-auto-care.html">Central Texas Auto Care</a></h3>
+        <p class="card-desc">Full-service auto repair. ASE-certified technicians, honest diagnostics, Texas inspections.</p>
+        <div><span class="tag">Auto Repair</span><span class="tag">ASE Certified</span></div>
+      </div>
+      <a href="/businesses/central-texas-auto-care.html" class="card-cta">View Details &#8594;</a>
+    </article>
+    <article class="card">
+      <div class="card-icon">&#x1F9B7;</div>
+      <div class="card-body">
+        <div class="cat-badge" style="background:#27AE6015;color:#27AE60">Health & Medical</div>
+        <div class="card-city">&#128205; Pflugerville, TX</div>
+        <h3 class="card-name"><a href="/businesses/pflugerville-family-dentistry.html">Pflugerville Family Dentistry</a></h3>
+        <p class="card-desc">4.8 stars, 2,605 reviews. Comprehensive family care from cleanings to implants.</p>
+        <div><span class="tag">Dentist</span><span class="tag">4.8&#9733; Rated</span></div>
+      </div>
+      <a href="/businesses/pflugerville-family-dentistry.html" class="card-cta">View Details &#8594;</a>
+    </article>
+    <article class="card">
+      <div class="card-icon">&#x1F9B7;</div>
+      <div class="card-body">
+        <div class="cat-badge" style="background:#27AE6015;color:#27AE60">Health & Medical</div>
+        <div class="card-city">&#128205; Pflugerville, TX</div>
+        <h3 class="card-name"><a href="/businesses/the-grand-family-dental-pflugerville.html">The Grand Family Dental</a></h3>
+        <p class="card-desc">Perfect 5.0 stars, 852 reviews. Exceptional family and cosmetic dentistry.</p>
+        <div><span class="tag">Dentist</span><span class="tag">5.0&#9733; Perfect</span></div>
+      </div>
+      <a href="/businesses/the-grand-family-dental-pflugerville.html" class="card-cta">View Details &#8594;</a>
+    </article>
+    <article class="card">
+      <div class="card-icon">&#x1F43E;</div>
+      <div class="card-body">
+        <div class="cat-badge" style="background:#6D4C4115;color:#6D4C41">Pet Care</div>
+        <div class="card-city">&#128205; Pflugerville, TX</div>
+        <h3 class="card-name"><a href="/businesses/white-rock-veterinary-hospital-pflugerville.html">White Rock Veterinary Hospital</a></h3>
+        <p class="card-desc">4.8 stars, 1,111 reviews. Full-service vet care for dogs, cats, and small animals.</p>
+        <div><span class="tag">Veterinarian</span><span class="tag">4.8&#9733; Rated</span></div>
+      </div>
+      <a href="/businesses/white-rock-veterinary-hospital-pflugerville.html" class="card-cta">View Details &#8594;</a>
+    </article>
+    <article class="card">
+      <div class="card-icon">&#x1F43E;</div>
+      <div class="card-body">
+        <div class="cat-badge" style="background:#6D4C4115;color:#6D4C41">Pet Care</div>
+        <div class="card-city">&#128205; Pflugerville, TX</div>
+        <h3 class="card-name"><a href="/businesses/pflugerville-animal-clinic.html">Pflugerville Animal Clinic</a></h3>
+        <p class="card-desc">Full-service veterinary care. Wellness, vaccines, surgery, dental.</p>
+        <div><span class="tag">Veterinarian</span></div>
+      </div>
+      <a href="/businesses/pflugerville-animal-clinic.html" class="card-cta">View Details &#8594;</a>
+    </article>
+  </div>
+</div>
+<div class="cta-band">
+  <h2>Own a Business Here?</h2>
+  <p>Get discovered by your neighbors &mdash; list your business for free on CentralTexas.online.</p>
+  <a href="/add-listing.html" class="btn-white">+ Add Free Listing</a>
+</div>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand"><div class="logo">&#x1F920; <b>CentralTexas</b>.online</div><p>The free local business directory for Central Texas.</p></div>
+      <div class="footer-col"><h4>Explore</h4><a href="/index.html">Browse Directory</a><a href="/restaurants.html">Restaurants</a><a href="/dentists.html">Dentists</a><a href="/auto-repair.html">Auto Repair</a><a href="/gyms-fitness.html">Fitness</a></div>
+      <div class="footer-col"><h4>Cities</h4><a href="/round-rock.html">Round Rock</a><a href="/georgetown.html">Georgetown</a><a href="/cedar-park.html">Cedar Park</a><a href="/pflugerville.html">Pflugerville</a><a href="/waco.html">Waco</a></div>
+      <div class="footer-col"><h4>Company</h4><a href="/about.html">About Us</a><a href="/add-listing.html">Add Listing</a><a href="/privacy.html">Privacy</a></div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2026 CentralTexas.online</span><span>Made with &#10084;&#65039; in Central Texas</span></div>
+  </footer>
+  <script>document.querySelector('.burger').addEventListener('click',()=>{document.getElementById('mainNav').classList.toggle('open');});</script>
+
+<div class="crosslink-band">
+  <div class="crosslink-band-inner">
+    <h4>&#x1F4CD; Pflugerville Business Categories</h4>
+    <div class="cl-pills"><a href="/restaurants.html" class="cl-pill">Restaurants</a><a href="/mexican-restaurants.html" class="cl-pill">Mexican Food</a><a href="/pizza.html" class="cl-pill">Pizza</a><a href="/burgers.html" class="cl-pill">Burgers</a><a href="/dentists.html" class="cl-pill">Dentists</a><a href="/chiropractors.html" class="cl-pill">Chiropractors</a><a href="/eye-doctors.html" class="cl-pill">Eye Doctors</a><a href="/urgent-care.html" class="cl-pill">Urgent Care</a><a href="/electricians.html" class="cl-pill">Electricians</a><a href="/plumbers.html" class="cl-pill">Plumbers</a><a href="/hvac.html" class="cl-pill">HVAC</a><a href="/roofers.html" class="cl-pill">Roofers</a><a href="/pest-control.html" class="cl-pill">Pest Control</a><a href="/auto-repair.html" class="cl-pill">Auto Repair</a><a href="/car-washes.html" class="cl-pill">Car Washes</a><a href="/gyms-fitness.html" class="cl-pill">Gyms & Fitness</a><a href="/yoga-fitness.html" class="cl-pill">Yoga Studios</a><a href="/spas.html" class="cl-pill">Spas</a><a href="/barbershops.html" class="cl-pill">Barbershops</a><a href="/nail-salons.html" class="cl-pill">Nail Salons</a><a href="/dog-groomers.html" class="cl-pill">Dog Groomers</a><a href="/veterinarians.html" class="cl-pill">Veterinarians</a></div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "name": "CentralTexas.online",
+  "short_name": "CentralTX",
+  "description": "Free local business directory for Central Texas",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#1D4E89",
+  "theme_color": "#1D4E89",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

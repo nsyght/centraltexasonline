@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#1D4E89">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>Best Restaurants in Central Texas | CentralTexas.online</title>
+  <meta name="description" content="Best restaurants in Central Texas including BBQ, breakfast, pizza, Indian, tacos, and more across Round Rock, Georgetown, Cedar Park, Waco, Taylor, and all of Central TX.">
+  <style>
+    :root{--primary:#1D4E89;--primary-dark:#0F2D54;--primary-light:#3A6DB5;--primary-pale:#E8F0FB;--accent:#E8821A;--accent-dark:#C06A0E;--accent-pale:#FEF3E7;--dark:#0A1628;--dark2:#122040;--white:#FFFFFF;--gray-50:#F7F9FC;--gray-100:#EDF1F8;--gray-200:#D5DEF0;--text:#0A1628;--text-muted:#4A5A7A;--radius:10px;--shadow:0 2px 12px rgba(0,0,0,.07);--shadow-lg:0 8px 32px rgba(0,0,0,.13);}
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Inter',sans-serif;background:var(--gray-50);color:var(--text);}
+    a{color:inherit;text-decoration:none;}
+    img{display:block;max-width:100%;}
+    .site-header{background:var(--dark);position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.3);}
+    .header-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;gap:20px;height:64px;}
+    .site-logo{display:flex;align-items:center;gap:10px;font-size:1.2rem;font-weight:800;color:var(--white);white-space:nowrap;}
+    .site-logo b{color:var(--accent);}
+    .header-nav{display:flex;align-items:center;gap:4px;flex:1;flex-wrap:wrap;}
+    .header-nav a{color:rgba(255,255,255,.8);font-size:.82rem;font-weight:500;padding:6px 10px;border-radius:6px;transition:color .2s,background .2s;}
+    .header-nav a:hover{color:var(--white);background:rgba(255,255,255,.1);}
+    .header-nav .btn-add{margin-left:auto;background:var(--accent);color:var(--white)!important;padding:8px 14px;border-radius:8px;font-weight:700;font-size:.82rem;}
+    .burger{display:none;cursor:pointer;color:var(--white);font-size:1.4rem;margin-left:auto;}
+    .site-footer{background:var(--dark);color:rgba(255,255,255,.7);margin-top:60px;}
+    .footer-inner{max-width:1200px;margin:0 auto;padding:48px 20px 20px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;}
+    .footer-brand .logo{font-size:1.1rem;font-weight:800;color:var(--white);margin-bottom:10px;}
+    .footer-brand .logo b{color:var(--accent);}
+    .footer-brand p{font-size:.85rem;line-height:1.6;}
+    .footer-col h4{color:var(--white);font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px;}
+    .footer-col a{display:block;font-size:.85rem;color:rgba(255,255,255,.6);padding:3px 0;}
+    .footer-col a:hover{color:var(--accent);}
+    .footer-bottom{max-width:1200px;margin:0 auto;padding:16px 20px;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;font-size:.78rem;color:rgba(255,255,255,.4);}
+    @media(max-width:900px){.footer-inner{grid-template-columns:1fr 1fr;}}
+    @media(max-width:640px){.header-nav{display:none;flex-direction:column;position:absolute;top:64px;left:0;right:0;background:var(--dark2);padding:12px 20px 20px;gap:4px;}.header-nav.open{display:flex;}.header-nav .btn-add{margin-left:0;text-align:center;}.burger{display:block;}.footer-inner{grid-template-columns:1fr;gap:24px;}}
+    .page-hero{background:linear-gradient(135deg,var(--dark),var(--primary-dark));color:var(--white);padding:56px 20px 64px;text-align:center;}
+    .page-hero .eyebrow{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.16em;color:var(--accent);margin-bottom:12px;}
+    .page-hero h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;line-height:1.15;margin-bottom:14px;}
+    .page-hero p{font-size:1rem;opacity:.85;max-width:560px;margin:0 auto;line-height:1.65;}
+    .section{max-width:1200px;margin:0 auto;padding:48px 20px 0;}
+    .section-title{font-size:1.3rem;font-weight:800;margin-bottom:20px;display:flex;align-items:center;gap:12px;}
+    .section-title::after{content:'';flex:1;height:2px;background:var(--gray-200);}
+    .biz-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;margin-bottom:48px;}
+    .card{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);display:flex;flex-direction:column;overflow:hidden;transition:transform .2s,box-shadow .2s;border-top:3px solid var(--primary);}
+    .card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg);}
+    .card-icon{font-size:2rem;padding:18px 18px 0;}
+    .card-body{padding:10px 18px;flex:1;}
+    .cat-badge{font-size:.7rem;font-weight:700;padding:3px 10px;border-radius:20px;text-transform:uppercase;letter-spacing:.04em;display:inline-block;margin-bottom:5px;}
+    .card-city{font-size:.72rem;color:var(--text-muted);font-weight:500;margin-bottom:3px;}
+    .card-name{font-size:1rem;font-weight:700;margin:3px 0 6px;}
+    .card-name a{color:var(--text);}
+    .card-name a:hover{color:var(--primary);}
+    .card-desc{font-size:.82rem;color:var(--text-muted);line-height:1.55;margin-bottom:10px;}
+    .tag{background:var(--primary-pale);color:var(--primary-dark);font-size:.7rem;padding:3px 9px;border-radius:20px;font-weight:600;display:inline-block;margin:2px;}
+    .card-cta{display:block;text-align:center;padding:10px;background:var(--gray-50);color:var(--primary);font-weight:700;font-size:.84rem;border-top:1px solid var(--gray-200);transition:background .2s;}
+    .card-cta:hover{background:var(--primary);color:var(--white);}
+    .breadcrumb{max-width:1200px;margin:20px auto 0;padding:0 20px;font-size:.84rem;color:var(--text-muted);}
+    .breadcrumb a{color:var(--primary);font-weight:600;}
+    .intro-box{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);padding:28px 32px;margin-bottom:36px;border-left:4px solid var(--accent);}
+    .intro-box p{line-height:1.8;color:var(--text-muted);font-size:.95rem;}
+    .city-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;}
+    .city-link{background:var(--primary-pale);color:var(--primary-dark);font-size:.82rem;font-weight:600;padding:6px 14px;border-radius:50px;transition:all .2s;}
+    .city-link:hover{background:var(--primary);color:var(--white);}
+    .cta-band{background:linear-gradient(90deg,var(--primary-dark),var(--primary));color:var(--white);text-align:center;padding:56px 20px;margin-top:60px;}
+    .cta-band h2{font-size:1.7rem;font-weight:800;margin-bottom:10px;}
+    .cta-band p{opacity:.88;margin-bottom:24px;font-size:.97rem;}
+    .btn-white{display:inline-block;background:var(--white);color:var(--primary);font-weight:800;padding:13px 36px;border-radius:50px;font-size:1rem;}
+    @media(max-width:600px){.biz-grid{grid-template-columns:1fr;}}
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Best Restaurants in Central Texas",
+  "description": "Top-rated restaurants across Central Texas including BBQ, breakfast, pizza, Indian, and more.",
+  "numberOfItems": 7,
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Louie Mueller Barbecue",
+      "url": "https://centraltexas.online/businesses/louie-mueller-barbecue-taylor.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Black's Barbecue Lockhart",
+      "url": "https://centraltexas.online/businesses/blacks-barbecue-lockhart.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Terry Black's Barbecue Waco",
+      "url": "https://centraltexas.online/businesses/terry-blacks-barbecue-waco.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Rock N Grill Round Rock",
+      "url": "https://centraltexas.online/businesses/rock-n-grill-round-rock.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "name": "The Heights Pizzeria Harker Heights",
+      "url": "https://centraltexas.online/businesses/the-heights-pizzeria-harker-heights.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 6,
+      "name": "Magnolia Table Waco",
+      "url": "https://centraltexas.online/businesses/magnolia-table-waco.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 7,
+      "name": "Round Rock Donuts",
+      "url": "https://centraltexas.online/businesses/round-rock-donuts.html"
+    }
+  ]
+}
+  </script>
+  <link rel="canonical" href="https://centraltexas.online/restaurants.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Best Restaurants in Central Texas | CentralTexas.online">
+  <meta property="og:description" content="Best restaurants in Central Texas including BBQ, breakfast, pizza, Indian, tacos, and more across Round Rock, Georgetown, Cedar Park, Waco, Taylor, and all of Central TX.">
+  <meta property="og:url" content="https://centraltexas.online/restaurants.html">
+  <meta property="og:site_name" content="CentralTexas.online">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Best Restaurants in Central Texas | CentralTexas.online">
+  <meta name="twitter:description" content="Best restaurants in Central Texas including BBQ, breakfast, pizza, Indian, tacos, and more across Round Rock, Georgetown, Cedar Park, Waco, Taylor, and all of Central TX.">
+<style>
+.crosslink-band{background:var(--primary-pale,#E8F0FB);padding:20px;margin-top:8px;border-top:1px solid var(--gray-200,#D5DEF0);}
+.crosslink-band-inner{max-width:1200px;margin:0 auto;}
+.crosslink-band h4{font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--primary,#1D4E89);margin-bottom:10px;}
+.crosslink-band .cl-pills{display:flex;flex-wrap:wrap;gap:8px;}
+.crosslink-band .cl-pill{background:#fff;border:1.5px solid var(--primary,#1D4E89);border-radius:20px;padding:5px 14px;font-size:.8rem;font-weight:600;color:var(--primary,#1D4E89);}
+.crosslink-band .cl-pill:hover{background:var(--primary,#1D4E89);color:#fff;}
+</style>
+<style>
+.page-breadcrumb{background:#fff;border-bottom:1px solid var(--gray-100,#EDF1F8);padding:8px 20px;font-size:.8rem;color:var(--text-muted,#4A5A7A);}
+.page-breadcrumb a{color:var(--primary,#1D4E89);font-weight:500;}.page-breadcrumb a:hover{text-decoration:underline;}
+.page-breadcrumb span{margin:0 6px;opacity:.5;}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+  {"@type":"ListItem","position":1,"name":"CentralTexas.online","item":"https://centraltexas.online/"},
+  {"@type":"ListItem","position":2,"name":"Restaurants","item":"https://centraltexas.online/restaurants.html"}
+]}
+</script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/index.html" class="site-logo">&#x1F920;&nbsp;<b>CentralTexas</b>.online</a>
+      <nav class="header-nav" id="mainNav">
+        <a href="/index.html">Directory</a>
+        <a href="/blog.html">Blog</a>
+        <a href="/events.html">Events</a>
+        <a href="/deals.html">Deals</a>
+        <a href="/spotlight.html">Spotlight</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/add-listing.html" class="btn-add">+ Free Listing</a>
+      </nav>
+      <button class="burger" onclick="document.getElementById('mainNav').classList.toggle('open')">&#9776;</button>
+    </div>
+  </header>
+<div class="page-breadcrumb"><a href="/index.html">&#x1F3E0; Directory</a><span>›</span>Restaurants</div>
+<div class="breadcrumb" style="display:none"><a href="/index.html">&#8592; Directory</a> &rsaquo; Best Restaurants in Central Texas</div>
+
+<div class="page-hero">
+  <div class="eyebrow">&#x1F37D;&#xFE0F; Food & Dining</div>
+  <h1>Best Restaurants in Central Texas</h1>
+  <p>From legendary Texas BBQ to Indian buffets, craft tacos to famous breakfast joints &mdash; discover the best places to eat across Round Rock, Georgetown, Cedar Park, Waco, and beyond.</p>
+</div>
+
+<div class="section">
+  <div class="intro-box">
+    <p>Central Texas is a serious food destination. The region is home to some of the most celebrated BBQ joints on earth (Louie Mueller, Black's, Terry Black's), beloved local institutions (Round Rock Donuts, Monument Café), and a growing wave of diverse, community-loved restaurants earning thousands of five-star reviews. Use this guide to discover the best dining across the region.</p>
+    <div class="city-links"><a href="/index.html?q=round+rock" class="city-link">Round Rock</a><a href="/index.html?q=georgetown" class="city-link">Georgetown</a><a href="/index.html?q=cedar+park" class="city-link">Cedar Park</a><a href="/index.html?q=pflugerville" class="city-link">Pflugerville</a><a href="/index.html?q=waco" class="city-link">Waco</a><a href="/index.html?q=taylor" class="city-link">Taylor</a><a href="/index.html?q=killeen" class="city-link">Killeen</a><a href="/index.html?q=lockhart" class="city-link">Lockhart</a><a href="/index.html?q=harker+heights" class="city-link">Harker Heights</a></div>
+  </div>
+  <div class="section-title">Top Picks</div>
+  <div class="biz-grid">
+    <article class="card">
+      <div class="card-icon">&#x1F356;</div>
+      <div class="card-body">
+        <div class="cat-badge" style="background:#C0392B15;color:#C0392B">Food & Dining</div>
+        <div class="card-city">&#128205; Lockhart, TX</div>
+        <h3 class="card-name"><a href="/businesses/blacks-barbecue-lockhart.html">Black's Barbecue &mdash; Lockhart</a></h3>
+        <p class="card-desc">Since 1932, one of the Big Four Lockhart BBQ legends. 4.5 stars, 4,167 reviews. Pilgrimage-worthy brisket.</p>
+        <div><span class="tag">BBQ</span><span class="tag">Since 1932</span><span class="tag">Texas Legend</span><span class="tag">Lockhart</span></div>
+      </div>
+      <a href="/businesses/blacks-barbecue-lockhart.html" class="card-cta">View Details &#8594;</a>
+    </article>
+    <article class="card">
+      <div class="card-icon">&#x1F356;</div>
+      <div class="card-body">
+        <div class="cat-badge" style="background:#C0392B15;color:#C0392B">Food & Dining</div>
+        <div class="card-city">&#128205; Taylor, TX</div>
+        <h3 class="card-name"><a href="/businesses/louie-mueller-barbecue-taylor.html">Louie Mueller Barbecue</a></h3>
+        <p class="card-desc">A Texas BBQ landmark since 1949. Considered one of the greatest BBQ joints in the world. 4.4 stars, 2,594 reviews.</p>
+        <div><span class="tag">BBQ</span><span class="tag">Texas Legend</span><span class="tag">Since 1949</span><span class="tag">Taylor</span></div>
+      </div>
+      <a href="/businesses/louie-mueller-barbecue-taylor.html" class="card-cta">View Details &#8594;</a>
+    </article>
+    <article class="card">
+      <div class="card-icon">&#x1F356;</div>
+      <div class="card-body">
+        <div class="cat-badge" style="background:#C0392B15;color:#C0392B">Food & Dining</div>
+        <div class="card-city">&#128205; Waco, TX</div>
+        <h3 class="card-name"><a href="/businesses/terry-blacks-barbecue-waco.html">Terry Black's Barbecue &mdash; Waco</a></h3>
+        <p class="card-desc">Award-winning Central Texas BBQ. 4.7 stars, 3,577 reviews. Post oak-smoked brisket and house-made sides.</p>
+        <div><span class="tag">BBQ</span><span class="tag">4.7&#9733; Rated</span><span class="tag">Waco</span><span class="tag">Brisket</span></div>
+      </div>
+      <a href="/businesses/terry-blacks-barbecue-waco.html" class="card-cta">View Details &#8594;</a>
+    </article>
+    <article class="card">
+      <div class="card-icon">&#x1F356;</div>
+      <div class="card-body">
+        <div class="cat-badge" style="background:#C0392B15;color:#C0392B">Food & Dining</div>
+        <div class="card-city">&#128205; Pflugerville, TX</div>
+        <h3 class="card-name"><a href="/businesses/brothertons-black-iron-bbq-pflugerville.html">Brotherton's Black Iron BBQ</a></h3>
+        <p class="card-desc">Pflugerville's neighborhood BBQ gem. 4.6 stars, 1,824 reviews. Post-oak smoked brisket and house-made sausage.</p>
+        <div><span class="tag">BBQ</span><span class="tag">4.6&#9733; Rated</span><span class="tag">Pflugerville</span></div>
+      </div>
+      <a href="/businesses/brothertons-black-iron-bbq-pflugerville.html" class="card-cta">View Details &#8594;</a>
+    </article>
+    <article class="card">
+      <div class="card-icon">&#x1F9C7;</div>
+      <div class="card-body">
+        <div class="cat-badge" style="background:#C0392B15;color:#C0392B">Food & Dining</div>
+        <div class="card-city">&#128205; Round Rock, TX</div>
+        <h3 class="card-name"><a href="/businesses/round-rock-donuts.html">Round Rock Donuts</a></h3>
+        <p class="card-desc">A Texas institution since 1926. Famous for their Texas-sized golden glazed donuts that have made Central Texas famous.</p>
+        <div><span class="tag">Donuts</span><span class="tag">Texas Landmark</span><span class="tag">Since 1926</span><span class="tag">Round Rock</span></div>
+      </div>
+      <a href="/businesses/round-rock-donuts.html" class="card-cta">View Details &#8594;</a>
+    </article>
+    <article class="card">
+      <div class="card-icon">&#x1F37D;&#xFE0F;</div>
+      <div class="card-body">
+        <div class="cat-badge" style="background:#C0392B15;color:#C0392B">Food & Dining</div>
+        <div class="card-city">&#128205; Georgetown, TX</div>
+        <h3 class="card-name"><a href="/businesses/georgetown-square-restaurant.html">Monument Café</a></h3>
+        <p class="card-desc">Georgetown's beloved farm-to-table restaurant on the historic square. Scratch-cooked American comfort food.</p>
+        <div><span class="tag">American</span><span class="tag">Farm-to-Table</span><span class="tag">Georgetown</span><span class="tag">Brunch</span></div>
+      </div>
+      <a href="/businesses/georgetown-square-restaurant.html" class="card-cta">View Details &#8594;</a>
+    </article>
+    <article class="card">
+      <div class="card-icon">&#x1F355;</div>
+      <div class="card-body">
+        <div class="cat-badge" style="background:#C0392B15;color:#C0392B">Food & Dining</div>
+        <div class="card-city">&#128205; Harker Heights, TX</div>
+        <h3 class="card-name"><a href="/businesses/the-heights-pizzeria-harker-heights.html">The Heights Pizzeria & Drafthouse</a></h3>
+        <p class="card-desc">Central Texas highest-rated pizza spot. 4.9 stars, 5,759 reviews. Craft pies and cold drafts.</p>
+        <div><span class="tag">Pizza</span><span class="tag">4.9&#9733; Rated</span><span class="tag">Harker Heights</span></div>
+      </div>
+      <a href="/businesses/the-heights-pizzeria-harker-heights.html" class="card-cta">View Details &#8594;</a>
+    </article>
+    <article class="card">
+      <div class="card-icon">&#x1F35B;</div>
+      <div class="card-body">
+        <div class="cat-badge" style="background:#C0392B15;color:#C0392B">Food & Dining</div>
+        <div class="card-city">&#128205; Round Rock, TX</div>
+        <h3 class="card-name"><a href="/businesses/rock-n-grill-round-rock.html">Rock N Grill</a></h3>
+        <p class="card-desc">Nearly 9,000 Google reviews at 4.7 stars. Famous lunch buffet, butter chicken, biryani, and vegetarian options.</p>
+        <div><span class="tag">Indian</span><span class="tag">4.7&#9733; Rated</span><span class="tag">Lunch Buffet</span><span class="tag">Round Rock</span></div>
+      </div>
+      <a href="/businesses/rock-n-grill-round-rock.html" class="card-cta">View Details &#8594;</a>
+    </article>
+    <article class="card">
+      <div class="card-icon">&#x1F953;</div>
+      <div class="card-body">
+        <div class="cat-badge" style="background:#C0392B15;color:#C0392B">Food & Dining</div>
+        <div class="card-city">&#128205; Round Rock, TX</div>
+        <h3 class="card-name"><a href="/businesses/salt-lick-bbq-round-rock.html">The Salt Lick BBQ &mdash; Round Rock</a></h3>
+        <p class="card-desc">Central Texas's legendary BBQ institution. The Salt Lick's Round Rock location brings the famous Driftwood smoke ring.</p>
+        <div><span class="tag">BBQ</span><span class="tag">Texas Legend</span><span class="tag">Brisket</span><span class="tag">Round Rock</span></div>
+      </div>
+      <a href="/businesses/salt-lick-bbq-round-rock.html" class="card-cta">View Details &#8594;</a>
+    </article>
+    <article class="card">
+      <div class="card-icon">&#x1F32E;</div>
+      <div class="card-body">
+        <div class="cat-badge" style="background:#C0392B15;color:#C0392B">Food & Dining</div>
+        <div class="card-city">&#128205; Round Rock, TX</div>
+        <h3 class="card-name"><a href="/businesses/torchys-tacos.html">Torchy's Tacos</a></h3>
+        <p class="card-desc">The Austin-born taco chain that started a revolution. Damn good tacos and creative queso at Central Texas locations.</p>
+        <div><span class="tag">Tacos</span><span class="tag">Austin Original</span><span class="tag">Queso</span></div>
+      </div>
+      <a href="/businesses/torchys-tacos.html" class="card-cta">View Details &#8594;</a>
+    </article>
+    <article class="card">
+      <div class="card-icon">&#x1F35E;</div>
+      <div class="card-body">
+        <div class="cat-badge" style="background:#C0392B15;color:#C0392B">Food & Dining</div>
+        <div class="card-city">&#128205; Waco, TX</div>
+        <h3 class="card-name"><a href="/businesses/magnolia-table-waco.html">Magnolia Table</a></h3>
+        <p class="card-desc">Chip and Joanna Gaines' celebrated breakfast restaurant. 4.5 stars, 8,808 reviews. Scratch-made comfort food.</p>
+        <div><span class="tag">Breakfast</span><span class="tag">Brunch</span><span class="tag">4.5&#9733; Rated</span><span class="tag">Waco</span></div>
+      </div>
+      <a href="/businesses/magnolia-table-waco.html" class="card-cta">View Details &#8594;</a>
+    </article>
+    <article class="card">
+      <div class="card-icon">&#x2615;</div>
+      <div class="card-body">
+        <div class="cat-badge" style="background:#C0392B15;color:#C0392B">Food & Dining</div>
+        <div class="card-city">&#128205; Georgetown, TX</div>
+        <h3 class="card-name"><a href="/businesses/309-coffee-georgetown.html">309 Coffee</a></h3>
+        <p class="card-desc">Georgetown's favorite local coffee shop. 4.8 stars, 927 reviews. Exceptional espresso in a charming downtown setting.</p>
+        <div><span class="tag">Coffee</span><span class="tag">4.8&#9733; Rated</span><span class="tag">Georgetown</span></div>
+      </div>
+      <a href="/businesses/309-coffee-georgetown.html" class="card-cta">View Details &#8594;</a>
+    </article>
+    <article class="card">
+      <div class="card-icon">&#x2615;</div>
+      <div class="card-body">
+        <div class="cat-badge" style="background:#C0392B15;color:#C0392B">Food & Dining</div>
+        <div class="card-city">&#128205; Waco, TX</div>
+        <h3 class="card-name"><a href="/businesses/bitty-and-beaus-coffee-waco.html">Bitty & Beau's Coffee</a></h3>
+        <p class="card-desc">Social enterprise coffee shop employing people with intellectual disabilities. 4.9 stars, 1,661 reviews.</p>
+        <div><span class="tag">Coffee</span><span class="tag">4.9&#9733; Rated</span><span class="tag">Waco</span><span class="tag">Social Enterprise</span></div>
+      </div>
+      <a href="/businesses/bitty-and-beaus-coffee-waco.html" class="card-cta">View Details &#8594;</a>
+    </article>
+    <article class="card">
+      <div class="card-icon">&#x1F37A;</div>
+      <div class="card-body">
+        <div class="cat-badge" style="background:#C0392B15;color:#C0392B">Food & Dining</div>
+        <div class="card-city">&#128205; Round Rock, TX</div>
+        <h3 class="card-name"><a href="/businesses/round-rock-brewing.html">Round Rock Brewing Co.</a></h3>
+        <p class="card-desc">Round Rock's hometown brewery on historic Liberty Ave. 4.6 stars. Rotating craft taps and community events.</p>
+        <div><span class="tag">Craft Beer</span><span class="tag">4.6&#9733; Rated</span><span class="tag">Taproom</span><span class="tag">Round Rock</span></div>
+      </div>
+      <a href="/businesses/round-rock-brewing.html" class="card-cta">View Details &#8594;</a>
+    </article>
+    <article class="card">
+      <div class="card-icon">&#x1F37B;</div>
+      <div class="card-body">
+        <div class="cat-badge" style="background:#C0392B15;color:#C0392B">Food & Dining</div>
+        <div class="card-city">&#128205; Marble Falls, TX</div>
+        <h3 class="card-name"><a href="/businesses/marble-falls-brewing.html">Marble Falls Brewing Co.</a></h3>
+        <p class="card-desc">The Hill Country's favorite craft brewery. 4.6 stars. Rotating taps, outdoor seating, and live music weekends.</p>
+        <div><span class="tag">Craft Beer</span><span class="tag">4.6&#9733; Rated</span><span class="tag">Hill Country</span><span class="tag">Marble Falls</span></div>
+      </div>
+      <a href="/businesses/marble-falls-brewing.html" class="card-cta">View Details &#8594;</a>
+    </article>
+    <article class="card">
+      <div class="card-icon">&#x1F373;</div>
+      <div class="card-body">
+        <div class="cat-badge" style="background:#C0392B15;color:#C0392B">Food & Dining</div>
+        <div class="card-city">&#128205; Cedar Park, TX</div>
+        <h3 class="card-name"><a href="/businesses/first-watch-cedar-park.html">First Watch &mdash; Cedar Park</a></h3>
+        <p class="card-desc">Cedar Park's most-reviewed breakfast spot. 4.6 stars, 2,134 reviews. Fresh made-to-order morning meals daily.</p>
+        <div><span class="tag">Breakfast</span><span class="tag">Brunch</span><span class="tag">4.6&#9733; Rated</span><span class="tag">Cedar Park</span></div>
+      </div>
+      <a href="/businesses/first-watch-cedar-park.html" class="card-cta">View Details &#8594;</a>
+    </article>
+    <article class="card">
+      <div class="card-icon">&#x1F525;</div>
+      <div class="card-body">
+        <div class="cat-badge" style="background:#C0392B15;color:#C0392B">Food & Dining</div>
+        <div class="card-city">&#128205; Waco Area, TX</div>
+        <h3 class="card-name"><a href="/businesses/helberg-barbecue-waco.html">Helberg Barbecue</a></h3>
+        <p class="card-desc">Waco's best-kept BBQ secret. 4.7 stars, weekend-only pit-smoked brisket that regularly sells out.</p>
+        <div><span class="tag">BBQ</span><span class="tag">4.7&#9733; Rated</span><span class="tag">Weekend Only</span><span class="tag">Waco Area</span></div>
+      </div>
+      <a href="/businesses/helberg-barbecue-waco.html" class="card-cta">View Details &#8594;</a>
+    </article>
+    <article class="card">
+      <div class="card-icon">&#x1F356;</div>
+      <div class="card-body">
+        <div class="cat-badge" style="background:#C0392B15;color:#C0392B">Food & Dining</div>
+        <div class="card-city">&#128205; Pflugerville, TX</div>
+        <h3 class="card-name"><a href="/businesses/brothertons-black-iron-bbq-pflugerville.html">Brotherton's Black Iron BBQ</a></h3>
+        <p class="card-desc">Pflugerville neighborhood BBQ gem. 4.6 stars, 1,824 reviews.</p>
+        <div><span class="tag">BBQ</span><span class="tag">Pflugerville</span></div>
+      </div>
+      <a href="/businesses/brothertons-black-iron-bbq-pflugerville.html" class="card-cta">View Details &#8594;</a>
+    </article>
+    <article class="card">
+      <div class="card-icon">&#x1F34A;</div>
+      <div class="card-body">
+        <div class="cat-badge" style="background:#C0392B15;color:#C0392B">Food & Dining</div>
+        <div class="card-city">&#128205; Buda, TX</div>
+        <h3 class="card-name"><a href="/businesses/buda-juice-bar.html">Buda Juice Bar & Smoothies</a></h3>
+        <p class="card-desc">Buda's beloved local juice bar on Main Street. 4.8 stars for fresh cold-pressed juices and acai bowls.</p>
+        <div><span class="tag">Juice Bar</span><span class="tag">4.8&#9733; Rated</span><span class="tag">Healthy</span><span class="tag">Buda</span></div>
+      </div>
+      <a href="/businesses/buda-juice-bar.html" class="card-cta">View Details &#8594;</a>
+    </article>
+    <article class="card">
+      <div class="card-icon">&#x1F969;</div>
+      <div class="card-body">
+        <div class="cat-badge" style="background:#C0392B15;color:#C0392B">Food & Dining</div>
+        <div class="card-city">&#128205; Killeen, TX</div>
+        <h3 class="card-name"><a href="/businesses/la-michoacana-meat-market-killeen.html">La Michoacana Meat Market</a></h3>
+        <p class="card-desc">Killeen's beloved Mexican market. 4.6 stars. Fresh-cut meats, handmade tortillas, and authentic Mexican groceries.</p>
+        <div><span class="tag">Mexican Market</span><span class="tag">4.6&#9733; Rated</span><span class="tag">Killeen</span></div>
+      </div>
+      <a href="/businesses/la-michoacana-meat-market-killeen.html" class="card-cta">View Details &#8594;</a>
+    </article>
+  </div>
+</div>
+
+<div class="cta-band">
+  <h2>Own a Business in Central Texas?</h2>
+  <p>Get discovered by your neighbors &mdash; list your business for free. No credit card, no catch.</p>
+  <a href="/add-listing.html" class="btn-white">+ Add Free Listing</a>
+</div>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="logo">&#x1F920; <b>CentralTexas</b>.online</div>
+        <p>The free local business directory for Central Texas &mdash; connecting Austin, Round Rock, Georgetown, Cedar Park, Killeen, Temple, Waco, and communities across the region.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="/index.html">Browse Directory</a>
+        <a href="/blog.html">Blog &amp; Guides</a>
+        <a href="/events.html">Events Calendar</a>
+        <a href="/spotlight.html">Business Spotlight</a>
+      </div>
+      <div class="footer-col">
+        <h4>Business Owners</h4>
+        <a href="/add-listing.html">Add Free Listing</a>
+        <a href="/advertise.html">Advertise With Us</a>
+        <a href="/contact.html">Contact Us</a>
+      </div>
+      <div class="footer-col">
+        <h4>About</h4>
+        <a href="/about.html">About Us</a>
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="/terms.html">Terms of Use</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 CentralTexas.online &mdash; Your Local Guide to the Heart of Texas</span>
+      <span>Made with &#10084;&#65039; in Central Texas</span>
+    </div>
+  </footer>
+  <script>document.querySelector('.burger').addEventListener('click',()=>{document.getElementById('mainNav').classList.toggle('open');});</script>
+
+<div class="crosslink-band">
+  <div class="crosslink-band-inner">
+    <h4>&#x1F517; Related Categories</h4>
+    <div class="cl-pills"><a href="/mexican-restaurants.html" class="cl-pill">Mexican Food</a><a href="/burgers.html" class="cl-pill">Burgers</a><a href="/sushi.html" class="cl-pill">Sushi</a><a href="/pizza.html" class="cl-pill">Pizza</a><a href="/italian-restaurants.html" class="cl-pill">Italian</a><a href="/chinese-restaurants.html" class="cl-pill">Chinese</a><a href="/indian-food.html" class="cl-pill">Indian</a><a href="/korean-food.html" class="cl-pill">Korean</a><a href="/vietnamese-food.html" class="cl-pill">Vietnamese</a><a href="/steakhouses.html" class="cl-pill">Steakhouses</a><a href="/breweries.html" class="cl-pill">Breweries</a></div>
+  </div>
+</div>
+</body>
+</html>

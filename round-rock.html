@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#1D4E89">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>Best of Round Rock, TX &mdash; Local Business Directory | CentralTexas.online</title>
+  <meta name="description" content="Discover the best local businesses in Round Rock, TX &mdash; top-rated restaurants, dentists, auto shops, gyms, and more on CentralTexas.online.">
+  <style>
+    :root{--primary:#1D4E89;--primary-dark:#0F2D54;--primary-light:#3A6DB5;--primary-pale:#E8F0FB;--accent:#E8821A;--accent-dark:#C06A0E;--accent-pale:#FEF3E7;--dark:#0A1628;--dark2:#122040;--white:#FFFFFF;--gray-50:#F7F9FC;--gray-100:#EDF1F8;--gray-200:#D5DEF0;--text:#0A1628;--text-muted:#4A5A7A;--radius:10px;--shadow:0 2px 12px rgba(0,0,0,.07);--shadow-lg:0 8px 32px rgba(0,0,0,.13);}
+    *{box-sizing:border-box;margin:0;padding:0;}body{font-family:'Inter',sans-serif;background:var(--gray-50);color:var(--text);}a{color:inherit;text-decoration:none;}
+    .site-header{background:var(--dark);position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.3);}
+    .header-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;gap:20px;height:64px;}
+    .site-logo{display:flex;align-items:center;gap:10px;font-size:1.2rem;font-weight:800;color:var(--white);white-space:nowrap;}
+    .site-logo b{color:var(--accent);}.header-nav{display:flex;align-items:center;gap:4px;flex:1;flex-wrap:wrap;}
+    .header-nav a{color:rgba(255,255,255,.8);font-size:.82rem;font-weight:500;padding:6px 10px;border-radius:6px;transition:color .2s,background .2s;}
+    .header-nav a:hover{color:var(--white);background:rgba(255,255,255,.1);}
+    .header-nav .btn-add{margin-left:auto;background:var(--accent);color:var(--white)!important;padding:8px 14px;border-radius:8px;font-weight:700;font-size:.82rem;}
+    .burger{display:none;cursor:pointer;color:var(--white);font-size:1.4rem;margin-left:auto;}
+    .site-footer{background:var(--dark);color:rgba(255,255,255,.7);margin-top:60px;}
+    .footer-inner{max-width:1200px;margin:0 auto;padding:48px 20px 20px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;}
+    .footer-brand .logo{font-size:1.1rem;font-weight:800;color:var(--white);margin-bottom:10px;}.footer-brand .logo b{color:var(--accent);}
+    .footer-brand p{font-size:.85rem;line-height:1.6;}.footer-col h4{color:var(--white);font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px;}
+    .footer-col a{display:block;font-size:.85rem;color:rgba(255,255,255,.6);padding:3px 0;}.footer-col a:hover{color:var(--accent);}
+    .footer-bottom{max-width:1200px;margin:0 auto;padding:16px 20px;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;font-size:.78rem;color:rgba(255,255,255,.4);}
+    @media(max-width:900px){.footer-inner{grid-template-columns:1fr 1fr;}}
+    @media(max-width:640px){.header-nav{display:none;flex-direction:column;position:absolute;top:64px;left:0;right:0;background:var(--dark2);padding:12px 20px 20px;gap:4px;}.header-nav.open{display:flex;}.header-nav .btn-add{margin-left:0;text-align:center;}.burger{display:block;}.footer-inner{grid-template-columns:1fr;gap:24px;}}
+    .city-hero{color:var(--white);padding:64px 20px;text-align:center;position:relative;overflow:hidden;}
+    .city-hero::before{content:attr(data-emoji);font-size:220px;opacity:.06;position:absolute;right:-20px;top:-30px;line-height:1;pointer-events:none;}
+    .city-hero .eyebrow{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.16em;color:var(--accent);margin-bottom:12px;}
+    .city-hero h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:800;line-height:1.1;margin-bottom:14px;}
+    .city-hero p{font-size:1.02rem;opacity:.87;max-width:580px;margin:0 auto 28px;line-height:1.65;}
+    .city-stats{display:flex;justify-content:center;gap:36px;flex-wrap:wrap;}
+    .cstat .num{font-size:1.6rem;font-weight:800;color:var(--accent);}
+    .cstat .lbl{font-size:.7rem;opacity:.65;text-transform:uppercase;letter-spacing:.07em;}
+    .section{max-width:1200px;margin:0 auto;padding:48px 20px 0;}
+    .section-title{font-size:1.25rem;font-weight:800;margin-bottom:20px;display:flex;align-items:center;gap:12px;}
+    .section-title::after{content:'';flex:1;height:2px;background:var(--gray-200);}
+    .biz-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;margin-bottom:48px;}
+    .card{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);display:flex;flex-direction:column;overflow:hidden;transition:transform .2s,box-shadow .2s;border-top:3px solid var(--primary);}
+    .card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg);}
+    .card-icon{font-size:2rem;padding:18px 18px 0;}.card-body{padding:10px 18px;flex:1;}
+    .cat-badge{font-size:.7rem;font-weight:700;padding:3px 10px;border-radius:20px;text-transform:uppercase;letter-spacing:.04em;display:inline-block;margin-bottom:5px;}
+    .card-city{font-size:.72rem;color:var(--text-muted);font-weight:500;margin-bottom:3px;}
+    .card-name{font-size:1rem;font-weight:700;margin:3px 0 6px;}.card-name a{color:var(--text);}.card-name a:hover{color:var(--primary);}
+    .card-desc{font-size:.82rem;color:var(--text-muted);line-height:1.55;margin-bottom:10px;}
+    .tag{background:var(--primary-pale);color:var(--primary-dark);font-size:.7rem;padding:3px 9px;border-radius:20px;font-weight:600;display:inline-block;margin:2px;}
+    .card-cta{display:block;text-align:center;padding:10px;background:var(--gray-50);color:var(--primary);font-weight:700;font-size:.84rem;border-top:1px solid var(--gray-200);transition:background .2s;}
+    .card-cta:hover{background:var(--primary);color:var(--white);}
+    .city-guide{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);padding:28px 32px;margin-bottom:36px;}
+    .city-guide h2{font-size:1.1rem;font-weight:800;color:var(--primary);margin-bottom:14px;}
+    .city-guide p{line-height:1.8;color:var(--text-muted);font-size:.94rem;margin-bottom:12px;}
+    .cat-nav{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0;}
+    .cat-pill{background:var(--primary-pale);color:var(--primary-dark);font-size:.84rem;font-weight:600;padding:8px 16px;border-radius:50px;transition:all .2s;}
+    .cat-pill:hover{background:var(--primary);color:var(--white);}
+    .cta-band{background:linear-gradient(90deg,var(--primary-dark),var(--primary));color:var(--white);text-align:center;padding:56px 20px;margin-top:60px;}
+    .cta-band h2{font-size:1.7rem;font-weight:800;margin-bottom:10px;}
+    .cta-band p{opacity:.88;margin-bottom:24px;}
+    .btn-white{display:inline-block;background:var(--white);color:var(--primary);font-weight:800;padding:13px 36px;border-radius:50px;font-size:1rem;}
+    .breadcrumb{max-width:1200px;margin:20px auto 0;padding:0 20px;font-size:.84rem;color:var(--text-muted);}
+    .breadcrumb a{color:var(--primary);font-weight:600;}
+    @media(max-width:600px){.biz-grid{grid-template-columns:1fr;}.city-stats{gap:20px;}}
+  </style>
+  <link rel="canonical" href="https://centraltexas.online/round-rock.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Best of Round Rock, TX &mdash; Local Business Directory | CentralTexas.online">
+  <meta property="og:description" content="Discover the best local businesses in Round Rock, TX &mdash; top-rated restaurants, dentists, auto shops, gyms, and more on CentralTexas.online.">
+  <meta property="og:url" content="https://centraltexas.online/round-rock.html">
+  <meta property="og:site_name" content="CentralTexas.online">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Best of Round Rock, TX &mdash; Local Business Directory | CentralTexas.online">
+  <meta name="twitter:description" content="Discover the best local businesses in Round Rock, TX &mdash; top-rated restaurants, dentists, auto shops, gyms, and more on CentralTexas.online.">
+<style>
+.crosslink-band{background:var(--primary-pale,#E8F0FB);padding:20px;margin-top:8px;border-top:1px solid var(--gray-200,#D5DEF0);}
+.crosslink-band-inner{max-width:1200px;margin:0 auto;}
+.crosslink-band h4{font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--primary,#1D4E89);margin-bottom:10px;}
+.crosslink-band .cl-pills{display:flex;flex-wrap:wrap;gap:8px;}
+.crosslink-band .cl-pill{background:#fff;border:1.5px solid var(--primary,#1D4E89);border-radius:20px;padding:5px 14px;font-size:.8rem;font-weight:600;color:var(--primary,#1D4E89);}
+.crosslink-band .cl-pill:hover{background:var(--primary,#1D4E89);color:#fff;}
+</style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/index.html" class="site-logo">&#x1F920;&nbsp;<b>CentralTexas</b>.online</a>
+      <nav class="header-nav" id="mainNav">
+        <a href="/index.html">Directory</a>
+        <a href="/blog.html">Blog</a>
+        <a href="/events.html">Events</a>
+        <a href="/deals.html">Deals</a>
+        <a href="/spotlight.html">Spotlight</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/add-listing.html" class="btn-add">+ Free Listing</a>
+      </nav>
+      <button class="burger" onclick="document.getElementById('mainNav').classList.toggle('open')">&#9776;</button>
+    </div>
+  </header>
+<div class="breadcrumb"><a href="/index.html">&#8592; Directory</a> &rsaquo; Round Rock, TX</div>
+<div class="city-hero" data-emoji="&#x2B55;" style="background:linear-gradient(135deg,#0A1628 0%,#1D3A6E 55%,#1D4E89 100%);">
+  <div class="eyebrow">&#128205; Round Rock, Texas</div>
+  <h1>Central Texas's Most Dynamic City</h1>
+  <p>Round Rock is one of the fastest-growing cities in Texas &mdash; home to Dell Technologies, the legendary Round Rock Donuts, Dell Diamond baseball, and a thriving local business community along the I-35 corridor.</p>
+  <div class="city-stats">
+    <div class="cstat"><div class="num">170,000+</div><div class="lbl">Population</div></div>
+    <div class="cstat"><div class="num">15+</div><div class="lbl">Listed Businesses</div></div>
+    <div class="cstat"><div class="num">1851</div><div class="lbl">Founded</div></div>
+    <div class="cstat"><div class="num">Williamson</div><div class="lbl">County</div></div>
+  </div>
+</div>
+<div class="section">
+  <div class="city-guide">
+    <h2>About Round Rock</h2>
+    <p>Round Rock has transformed from a small bedroom community into a full-fledged city with a distinct identity. The historic downtown along Mays Street is experiencing a renaissance, while new development along University Boulevard and the SH-45 corridor brings national brands and local favorites alike. The city sits at the intersection of Williamson County's explosive growth and proximity to Austin, making it one of the most strategically located and economically vibrant communities in Central Texas.</p>
+    <div class="cat-nav"><a href="/index.html?cat=Food+&+Dining#round-rock" class="cat-pill">Food & Dining</a><a href="/index.html?cat=Auto+&+Repair#round-rock" class="cat-pill">Auto & Repair</a><a href="/index.html?cat=Health+&+Medical#round-rock" class="cat-pill">Health & Medical</a><a href="/index.html?cat=Shopping#round-rock" class="cat-pill">Shopping</a><a href="/index.html?cat=Recreation#round-rock" class="cat-pill">Recreation</a><a href="/index.html?cat=Community#round-rock" class="cat-pill">Community</a><a href="/index.html?cat=Home+Services#round-rock" class="cat-pill">Home Services</a></div>
+  </div>
+  <div class="section-title">Top Businesses in Round Rock</div>
+  <div class="biz-grid">
+    <article class="card">
+      <div class="card-icon">&#x1F9C7;</div>
+      <div class="card-body">
+        <div class="cat-badge" style="background:#C0392B15;color:#C0392B">Food & Dining</div>
+        <div class="card-city">&#128205; Round Rock, TX</div>
+        <h3 class="card-name"><a href="/businesses/round-rock-donuts.html">Round Rock Donuts</a></h3>
+        <p class="card-desc">Texas institution since 1926. Famous Texas-sized golden glazed donuts that have made the city famous.</p>
+        <div><span class="tag">Donuts</span><span class="tag">Texas Landmark</span><span class="tag">Since 1926</span></div>
+      </div>
+      <a href="/businesses/round-rock-donuts.html" class="card-cta">View Details &#8594;</a>
+    </article>
+    <article class="card">
+      <div class="card-icon">&#x1F953;</div>
+      <div class="card-body">
+        <div class="cat-badge" style="background:#C0392B15;color:#C0392B">Food & Dining</div>
+        <div class="card-city">&#128205; Round Rock, TX</div>
+        <h3 class="card-name"><a href="/businesses/salt-lick-bbq-round-rock.html">The Salt Lick BBQ</a></h3>
+        <p class="card-desc">Legendary Central Texas BBQ. The famous Driftwood smoke ring at the Round Rock location.</p>
+        <div><span class="tag">BBQ</span><span class="tag">Texas Legend</span><span class="tag">Brisket</span></div>
+      </div>
+      <a href="/businesses/salt-lick-bbq-round-rock.html" class="card-cta">View Details &#8594;</a>
+    </article>
+    <article class="card">
+      <div class="card-icon">&#x1F35B;</div>
+      <div class="card-body">
+        <div class="cat-badge" style="background:#C0392B15;color:#C0392B">Food & Dining</div>
+        <div class="card-city">&#128205; Round Rock, TX</div>
+        <h3 class="card-name"><a href="/businesses/rock-n-grill-round-rock.html">Rock N Grill</a></h3>
+        <p class="card-desc">Nearly 9,000 Google reviews at 4.7 stars. Famous lunch buffet and authentic Indian cuisine.</p>
+        <div><span class="tag">Indian</span><span class="tag">4.7&#9733; Rated</span><span class="tag">Lunch Buffet</span></div>
+      </div>
+      <a href="/businesses/rock-n-grill-round-rock.html" class="card-cta">View Details &#8594;</a>
+    </article>
+    <article class="card">
+      <div class="card-icon">&#x1F37A;</div>
+      <div class="card-body">
+        <div class="cat-badge" style="background:#C0392B15;color:#C0392B">Food & Dining</div>
+        <div class="card-city">&#128205; Round Rock, TX</div>
+        <h3 class="card-name"><a href="/businesses/round-rock-brewing.html">Round Rock Brewing Co.</a></h3>
+        <p class="card-desc">Hometown brewery on historic Liberty Ave. 4.6 stars. Rotating craft taps and community events.</p>
+        <div><span class="tag">Craft Beer</span><span class="tag">4.6&#9733; Rated</span><span class="tag">Taproom</span></div>
+      </div>
+      <a href="/businesses/round-rock-brewing.html" class="card-cta">View Details &#8594;</a>
+    </article>
+    <article class="card">
+      <div class="card-icon">&#x1F527;</div>
+      <div class="card-body">
+        <div class="cat-badge" style="background:#2980B915;color:#2980B9">Auto & Repair</div>
+        <div class="card-city">&#128205; Round Rock, TX</div>
+        <h3 class="card-name"><a href="/businesses/round-rock-auto-center.html">Round Rock Auto Center</a></h3>
+        <p class="card-desc">Highest-rated independent auto shop in Round Rock. 4.9 stars, 465 reviews. Honest, fair pricing.</p>
+        <div><span class="tag">Auto Repair</span><span class="tag">4.9&#9733; Rated</span></div>
+      </div>
+      <a href="/businesses/round-rock-auto-center.html" class="card-cta">View Details &#8594;</a>
+    </article>
+    <article class="card">
+      <div class="card-icon">&#x1F9B7;</div>
+      <div class="card-body">
+        <div class="cat-badge" style="background:#27AE6015;color:#27AE60">Health & Medical</div>
+        <div class="card-city">&#128205; Round Rock, TX</div>
+        <h3 class="card-name"><a href="/businesses/round-rock-family-dentistry.html">Round Rock Family Dentistry</a></h3>
+        <p class="card-desc">Comprehensive family dental care. Cleanings, fillings, crowns, Invisalign. Accepting new patients.</p>
+        <div><span class="tag">Dentist</span><span class="tag">Family</span><span class="tag">Invisalign</span></div>
+      </div>
+      <a href="/businesses/round-rock-family-dentistry.html" class="card-cta">View Details &#8594;</a>
+    </article>
+    <article class="card">
+      <div class="card-icon">&#x1F529;</div>
+      <div class="card-body">
+        <div class="cat-badge" style="background:#C0922A15;color:#C0922A">Home Services</div>
+        <div class="card-city">&#128205; Round Rock, TX</div>
+        <h3 class="card-name"><a href="/businesses/crows-plumbing-service-round-rock.html">Crows Plumbing Service</a></h3>
+        <p class="card-desc">4.9 stars, 2,153 reviews. Most-reviewed plumber in Central Texas. Fast, honest, expert.</p>
+        <div><span class="tag">Plumber</span><span class="tag">4.9&#9733; Rated</span><span class="tag">Emergency</span></div>
+      </div>
+      <a href="/businesses/crows-plumbing-service-round-rock.html" class="card-cta">View Details &#8594;</a>
+    </article>
+    <article class="card">
+      <div class="card-icon">&#x2744;&#xFE0F;</div>
+      <div class="card-body">
+        <div class="cat-badge" style="background:#C0922A15;color:#C0922A">Home Services</div>
+        <div class="card-city">&#128205; Round Rock, TX</div>
+        <h3 class="card-name"><a href="/businesses/koala-cooling-round-rock.html">Koala Cooling HVAC</a></h3>
+        <p class="card-desc">4.9 stars, 945 reviews. Top-rated HVAC for Round Rock and Central Texas homes.</p>
+        <div><span class="tag">HVAC</span><span class="tag">4.9&#9733; Rated</span><span class="tag">AC Repair</span></div>
+      </div>
+      <a href="/businesses/koala-cooling-round-rock.html" class="card-cta">View Details &#8594;</a>
+    </article>
+    <article class="card">
+      <div class="card-icon">&#x26BE;</div>
+      <div class="card-body">
+        <div class="cat-badge" style="background:#1D6A3A15;color:#1D6A3A">Recreation</div>
+        <div class="card-city">&#128205; Round Rock, TX</div>
+        <h3 class="card-name"><a href="/businesses/round-rock-express.html">Round Rock Express</a></h3>
+        <p class="card-desc">Triple-A baseball at Dell Diamond. Affordable family entertainment and pro-level baseball.</p>
+        <div><span class="tag">Baseball</span><span class="tag">Dell Diamond</span><span class="tag">Family Fun</span></div>
+      </div>
+      <a href="/businesses/round-rock-express.html" class="card-cta">View Details &#8594;</a>
+    </article>
+    <article class="card">
+      <div class="card-icon">&#x1F333;</div>
+      <div class="card-body">
+        <div class="cat-badge" style="background:#1D6A3A15;color:#1D6A3A">Recreation</div>
+        <div class="card-city">&#128205; Round Rock, TX</div>
+        <h3 class="card-name"><a href="/businesses/old-settlers-park.html">Old Settler's Park</a></h3>
+        <p class="card-desc">645 acres of sports fields, trails, fishing, disc golf, and splash pad. Free and family-friendly.</p>
+        <div><span class="tag">Park</span><span class="tag">Trails</span><span class="tag">Free</span></div>
+      </div>
+      <a href="/businesses/old-settlers-park.html" class="card-cta">View Details &#8594;</a>
+    </article>
+    <article class="card">
+      <div class="card-icon">&#x1F6D2;</div>
+      <div class="card-body">
+        <div class="cat-badge" style="background:#16A08515;color:#16A085">Shopping</div>
+        <div class="card-city">&#128205; Round Rock, TX</div>
+        <h3 class="card-name"><a href="/businesses/heb-round-rock.html">H-E-B Round Rock</a></h3>
+        <p class="card-desc">Central Texas's beloved grocery institution with full H-E-B selection and curbside pickup.</p>
+        <div><span class="tag">Grocery</span><span class="tag">Texas Favorite</span></div>
+      </div>
+      <a href="/businesses/heb-round-rock.html" class="card-cta">View Details &#8594;</a>
+    </article>
+    <article class="card">
+      <div class="card-icon">&#x1F6CB;&#xFE0F;</div>
+      <div class="card-body">
+        <div class="cat-badge" style="background:#16A08515;color:#16A085">Shopping</div>
+        <div class="card-city">&#128205; Round Rock, TX</div>
+        <h3 class="card-name"><a href="/businesses/ikea-round-rock.html">IKEA Round Rock</a></h3>
+        <p class="card-desc">Affordable Scandinavian furniture, home decor, and the famous Swedish meatballs.</p>
+        <div><span class="tag">Furniture</span><span class="tag">IKEA</span><span class="tag">Home Decor</span></div>
+      </div>
+      <a href="/businesses/ikea-round-rock.html" class="card-cta">View Details &#8594;</a>
+    </article>
+    <article class="card">
+      <div class="card-icon">&#x1F6CD;&#xFE0F;</div>
+      <div class="card-body">
+        <div class="cat-badge" style="background:#16A08515;color:#16A085">Shopping</div>
+        <div class="card-city">&#128205; Round Rock, TX</div>
+        <h3 class="card-name"><a href="/businesses/round-rock-premium-outlets.html">Round Rock Premium Outlets</a></h3>
+        <p class="card-desc">125+ stores with 25-65% off retail pricing. Central Texas premier outlet destination.</p>
+        <div><span class="tag">Outlet Shopping</span><span class="tag">125+ Stores</span></div>
+      </div>
+      <a href="/businesses/round-rock-premium-outlets.html" class="card-cta">View Details &#8594;</a>
+    </article>
+  </div>
+</div>
+<div class="cta-band">
+  <h2>Own a Business Here?</h2>
+  <p>Get discovered by your neighbors &mdash; list your business for free on CentralTexas.online.</p>
+  <a href="/add-listing.html" class="btn-white">+ Add Free Listing</a>
+</div>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand"><div class="logo">&#x1F920; <b>CentralTexas</b>.online</div><p>The free local business directory for Central Texas.</p></div>
+      <div class="footer-col"><h4>Explore</h4><a href="/index.html">Browse Directory</a><a href="/restaurants.html">Restaurants</a><a href="/dentists.html">Dentists</a><a href="/auto-repair.html">Auto Repair</a><a href="/gyms-fitness.html">Fitness</a></div>
+      <div class="footer-col"><h4>Cities</h4><a href="/round-rock.html">Round Rock</a><a href="/georgetown.html">Georgetown</a><a href="/cedar-park.html">Cedar Park</a><a href="/pflugerville.html">Pflugerville</a><a href="/waco.html">Waco</a></div>
+      <div class="footer-col"><h4>Company</h4><a href="/about.html">About Us</a><a href="/add-listing.html">Add Listing</a><a href="/privacy.html">Privacy</a></div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2026 CentralTexas.online</span><span>Made with &#10084;&#65039; in Central Texas</span></div>
+  </footer>
+  <script>document.querySelector('.burger').addEventListener('click',()=>{document.getElementById('mainNav').classList.toggle('open');});</script>
+
+<div class="crosslink-band">
+  <div class="crosslink-band-inner">
+    <h4>&#x1F4CD; Round Rock Business Categories</h4>
+    <div class="cl-pills"><a href="/restaurants.html" class="cl-pill">Restaurants</a><a href="/mexican-restaurants.html" class="cl-pill">Mexican Food</a><a href="/pizza.html" class="cl-pill">Pizza</a><a href="/burgers.html" class="cl-pill">Burgers</a><a href="/dentists.html" class="cl-pill">Dentists</a><a href="/chiropractors.html" class="cl-pill">Chiropractors</a><a href="/eye-doctors.html" class="cl-pill">Eye Doctors</a><a href="/urgent-care.html" class="cl-pill">Urgent Care</a><a href="/electricians.html" class="cl-pill">Electricians</a><a href="/plumbers.html" class="cl-pill">Plumbers</a><a href="/hvac.html" class="cl-pill">HVAC</a><a href="/roofers.html" class="cl-pill">Roofers</a><a href="/pest-control.html" class="cl-pill">Pest Control</a><a href="/auto-repair.html" class="cl-pill">Auto Repair</a><a href="/car-washes.html" class="cl-pill">Car Washes</a><a href="/gyms-fitness.html" class="cl-pill">Gyms & Fitness</a><a href="/yoga-fitness.html" class="cl-pill">Yoga Studios</a><a href="/spas.html" class="cl-pill">Spas</a><a href="/barbershops.html" class="cl-pill">Barbershops</a><a href="/nail-salons.html" class="cl-pill">Nail Salons</a><a href="/dog-groomers.html" class="cl-pill">Dog Groomers</a><a href="/veterinarians.html" class="cl-pill">Veterinarians</a></div>
+  </div>
+</div>
+</body>
+</html>
