@@ -20,11 +20,11 @@
     .header-nav a:hover{background:rgba(255,255,255,.1);color:#fff;}
     .btn-add{margin-left:auto!important;background:var(--accent)!important;color:#fff!important;padding:8px 16px!important;border-radius:8px!important;font-weight:700!important;}
     .burger{display:none;cursor:pointer;color:#fff;font-size:1.4rem;margin-left:auto;background:none;border:none;}
-    .dir-hero{background:linear-gradient(135deg,var(--dark),var(--primary-dark));color:#fff;padding:40px 24px;}
-    .dir-hero-inner{max-width:1280px;margin:0 auto;}
+    .dir-hero{background:linear-gradient(135deg,var(--dark),var(--primary-dark));color:#fff;padding:56px 24px;text-align:center;}
+    .dir-hero-inner{max-width:760px;margin:0 auto;}
     .dir-hero h1{font-size:1.8rem;font-weight:800;margin-bottom:10px;}
     .dir-hero p{opacity:.8;margin-bottom:20px;}
-    .search-wrap{display:flex;max-width:500px;background:#fff;border-radius:50px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.2);}
+    .search-wrap{display:flex;max-width:500px;margin:0 auto;background:#fff;border-radius:50px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.2);}
     .search-wrap input{flex:1;border:none;outline:none;padding:13px 20px;font-size:.95rem;color:var(--text);font-family:'Inter',sans-serif;}
     .search-wrap button{background:var(--accent);color:#fff;border:none;padding:11px 22px;font-weight:700;cursor:pointer;border-radius:0 50px 50px 0;}
     .dir-body{max-width:1280px;margin:32px auto;padding:0 24px 56px;}
@@ -77,8 +77,8 @@
 </div></header>
 
 <div class="dir-hero"><div class="dir-hero-inner">
-  <h1>&#x1F4CB; Central Texas Business Directory</h1>
-  <p>400+ local businesses across 24 cities. Filter by category or search by name.</p>
+  <h1>Central Texas Business Directory</h1>
+  <p style="opacity:.85;margin-bottom:24px;font-size:1rem;line-height:1.6;">400+ local businesses across 24 cities. Filter by category or search by name.</p>
   <div class="search-wrap">
     <input type="text" id="searchInput" placeholder="Search businesses, cities, or services&hellip;" autocomplete="off" onkeyup="if(event.key==='Enter')doSearch()">
     <button onclick="doSearch()">Search</button>
