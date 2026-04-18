@@ -1,170 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="canonical" href="https://centraltexas.online/about.html">
-  <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#1D4E89">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <title>About Us — CentralTexas.online</title>
-  <meta name="description" content="CentralTexas.online is a free, independent local business directory for the Central Texas region.">
+  <title>About CentralTexas.online — Local Business Directory</title>
+  <meta name="description" content="About CentralTexas.online — the free, independent local business directory for Round Rock, Cedar Park, Georgetown, Killeen, Waco, and all of Central Texas.">
   <style>
-
-    :root {
-      --primary: #1D4E89;
-      --primary-dark: #0F2D54;
-      --primary-light: #3A6DB5;
-      --primary-pale: #E8F0FB;
-      --accent: #E8821A;
-      --accent-dark: #C06A0E;
-      --accent-pale: #FEF3E7;
-      --dark: #0A1628;
-      --dark2: #122040;
-      --white: #FFFFFF;
-      --gray-50: #F7F9FC;
-      --gray-100: #EDF1F8;
-      --gray-200: #D5DEF0;
-      --text: #0A1628;
-      --text-muted: #4A5A7A;
-      --radius: 10px;
-      --shadow: 0 2px 12px rgba(0,0,0,.07);
-      --shadow-lg: 0 8px 32px rgba(0,0,0,.13);
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Inter', sans-serif; background: var(--gray-50); color: var(--text); }
-    a { color: inherit; text-decoration: none; }
-    img { display: block; max-width: 100%; }
-    .site-header { background: var(--dark); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,.3); }
-    .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; align-items: center; gap: 20px; height: 64px; }
-    .site-logo { display: flex; align-items: center; gap: 10px; font-size: 1.2rem; font-weight: 800; color: var(--white); white-space: nowrap; }
-    .site-logo b { color: var(--accent); }
-    .header-nav { display: flex; align-items: center; gap: 4px; flex: 1; flex-wrap: wrap; }
-    .header-nav a { color: rgba(255,255,255,.8); font-size: .82rem; font-weight: 500; padding: 6px 10px; border-radius: 6px; transition: color .2s, background .2s; }
-    .header-nav a:hover { color: var(--white); background: rgba(255,255,255,.1); }
-    .header-nav .btn-add { margin-left: auto; background: var(--accent); color: var(--white) !important; padding: 8px 14px; border-radius: 8px; font-weight: 700; font-size: .82rem; }
-    .header-nav .btn-add:hover { background: var(--accent-dark) !important; }
-    .burger { display: none; cursor: pointer; color: var(--white); font-size: 1.4rem; margin-left: auto; }
-    .site-footer { background: var(--dark); color: rgba(255,255,255,.7); margin-top: 60px; }
-    .footer-inner { max-width: 1200px; margin: 0 auto; padding: 48px 20px 20px; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; }
-    .footer-brand .logo { font-size: 1.1rem; font-weight: 800; color: var(--white); margin-bottom: 10px; }
-    .footer-brand .logo b { color: var(--accent); }
-    .footer-brand p { font-size: .85rem; line-height: 1.6; }
-    .footer-col h4 { color: var(--white); font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 14px; }
-    .footer-col a { display: block; font-size: .85rem; color: rgba(255,255,255,.6); padding: 3px 0; }
-    .footer-col a:hover { color: var(--accent); }
-    .footer-bottom { max-width: 1200px; margin: 0 auto; padding: 16px 20px; border-top: 1px solid rgba(255,255,255,.1); display: flex; justify-content: space-between; font-size: .78rem; color: rgba(255,255,255,.4); }
-    @media(max-width:900px) { .footer-inner { grid-template-columns: 1fr 1fr; } }
-    @media(max-width:640px) { .header-nav { display: none; flex-direction: column; position: absolute; top: 64px; left: 0; right: 0; background: var(--dark2); padding: 12px 20px 20px; gap: 4px; } .header-nav.open { display: flex; } .header-nav .btn-add { margin-left: 0; text-align: center; } .burger { display: block; } .footer-inner { grid-template-columns: 1fr; gap: 24px; } }
-
-    .page-hero { background: linear-gradient(135deg, var(--dark), var(--primary)); color: var(--white); padding: 56px 20px; text-align: center; }
-    .page-hero h1 { font-size: clamp(1.7rem,4vw,2.5rem); font-weight: 800; margin-bottom: 10px; }
-    .page-hero h1 em { color: var(--accent); font-style: normal; }
-    .page-hero p { opacity: .86; max-width: 540px; margin: 0 auto; font-size: .97rem; line-height: 1.6; }
-    .prose-wrap { max-width: 860px; margin: 40px auto; padding: 0 20px 60px; }
-    .prose { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); padding: 36px; line-height: 1.8; color: var(--text-muted); margin-bottom: 24px; }
-    .prose h2 { font-size: 1.1rem; font-weight: 700; color: var(--text); margin: 28px 0 10px; }
-    .prose h2:first-child { margin-top: 0; }
-    .prose a { color: var(--accent); }
-    .prose p { margin-bottom: 14px; font-size: .95rem; }
+    :root{--primary:#1D4E89;--primary-dark:#0F2D54;--primary-pale:#E8F0FB;--accent:#E8821A;--dark:#0A1628;--white:#fff;--gray-50:#F7F9FC;--gray-100:#EDF1F8;--gray-200:#D5DEF0;--text:#0A1628;--text-muted:#4A5A7A;--radius:10px;--shadow:0 2px 12px rgba(0,0,0,.07);}
+    *{box-sizing:border-box;margin:0;padding:0;}body{font-family:'Inter',sans-serif;background:var(--gray-50);color:var(--text);}a{color:inherit;text-decoration:none;}
+    .site-header{background:var(--dark);position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.3);}.header-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;gap:20px;height:64px;}.site-logo{display:flex;align-items:center;gap:10px;font-size:1.2rem;font-weight:800;color:#fff;white-space:nowrap;}.site-logo b{color:var(--accent);}.header-nav{display:flex;align-items:center;gap:4px;flex:1;}.header-nav a{color:rgba(255,255,255,.8);font-size:.82rem;font-weight:500;padding:6px 10px;border-radius:6px;}.header-nav .btn-add{margin-left:auto;background:var(--accent);color:#fff!important;padding:8px 14px;border-radius:8px;font-weight:700;font-size:.82rem;}.burger{display:none;cursor:pointer;color:#fff;font-size:1.4rem;margin-left:auto;}
+    .page-hero{background:linear-gradient(135deg,var(--dark),var(--primary-dark));color:#fff;padding:60px 20px;text-align:center;}.page-hero h1{font-size:clamp(2rem,4vw,3rem);font-weight:800;margin-bottom:14px;}.page-hero p{font-size:1.05rem;opacity:.85;max-width:640px;margin:0 auto;}
+    .about-body{max-width:1100px;margin:0 auto;padding:48px 20px;}
+    .about-grid{display:grid;grid-template-columns:2fr 1fr;gap:48px;align-items:start;}
+    .prose h2{font-size:1.35rem;font-weight:800;color:var(--primary);margin:40px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--primary-pale);}
+    .prose h3{font-size:1.05rem;font-weight:700;color:var(--text);margin:24px 0 10px;}
+    .prose p{line-height:1.85;color:var(--text-muted);margin-bottom:16px;font-size:.97rem;}
+    .prose ul{padding-left:22px;margin-bottom:16px;}.prose li{line-height:1.8;color:var(--text-muted);font-size:.95rem;margin-bottom:6px;}
+    .prose a{color:var(--accent);font-weight:600;}
+    .history-timeline{border-left:3px solid var(--primary-pale);padding-left:24px;margin:20px 0;}
+    .timeline-item{position:relative;margin-bottom:28px;}.timeline-item::before{content:'';position:absolute;left:-31px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--primary);border:2px solid #fff;box-shadow:0 0 0 2px var(--primary);}
+    .timeline-year{font-size:.78rem;font-weight:800;color:var(--primary);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px;}
+    .timeline-item p{margin-bottom:0;font-size:.92rem;}
+    .sidebar-card{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:24px;margin-bottom:20px;border-top:3px solid var(--primary);}
+    .sidebar-card h3{font-size:.9rem;font-weight:700;color:var(--primary);margin-bottom:14px;text-transform:uppercase;letter-spacing:.06em;}
+    .sidebar-card p,.sidebar-card li{font-size:.85rem;color:var(--text-muted);line-height:1.65;}
+    .sidebar-card ul{padding-left:16px;}
+    .stat-row{display:flex;gap:16px;margin-bottom:16px;flex-wrap:wrap;}
+    .stat-box{background:var(--primary-pale);border-radius:8px;padding:14px 20px;text-align:center;flex:1;min-width:80px;}
+    .stat-box .num{font-size:1.5rem;font-weight:800;color:var(--primary);}.stat-box .lbl{font-size:.72rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.06em;font-weight:600;}
+    .upgrade-card{background:linear-gradient(135deg,var(--accent),#C06A0E);border-radius:var(--radius);padding:24px;color:#fff;margin-bottom:20px;}
+    .upgrade-card h3{font-size:1rem;font-weight:800;margin-bottom:8px;}
+    .upgrade-card p{font-size:.85rem;opacity:.9;margin-bottom:16px;line-height:1.6;}
+    .upgrade-card a{display:block;background:#fff;color:var(--accent);padding:10px;border-radius:8px;font-weight:700;font-size:.88rem;text-align:center;}
+    .free-badge{display:inline-flex;align-items:center;gap:6px;background:var(--primary-pale);color:var(--primary);border:1.5px solid var(--primary);border-radius:20px;padding:5px 14px;font-size:.82rem;font-weight:700;margin-bottom:16px;}
+    .cta-band{background:linear-gradient(135deg,var(--primary-dark),var(--primary));color:#fff;padding:56px 20px;text-align:center;margin-top:60px;}
+    .cta-band h2{font-size:1.8rem;font-weight:800;margin-bottom:12px;}.cta-band p{opacity:.85;margin-bottom:24px;font-size:1rem;}
+    .cta-band a{display:inline-block;background:var(--accent);color:#fff;padding:14px 32px;border-radius:8px;font-weight:700;font-size:1rem;}
+    .site-footer{background:var(--dark);color:rgba(255,255,255,.7);margin-top:0;}.footer-inner{max-width:1200px;margin:0 auto;padding:48px 20px 20px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;}.footer-brand .logo{font-size:1.1rem;font-weight:800;color:#fff;margin-bottom:10px;}.footer-brand .logo b{color:var(--accent);}.footer-col h4{color:#fff;font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px;}.footer-col a{display:block;font-size:.85rem;color:rgba(255,255,255,.6);padding:3px 0;}.footer-bottom{max-width:1200px;margin:0 auto;padding:16px 20px;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;font-size:.78rem;color:rgba(255,255,255,.4);}
+    @media(max-width:768px){.about-grid{grid-template-columns:1fr;}.header-nav{display:none;}.burger{display:block;}.footer-inner{grid-template-columns:1fr;gap:24px;}.sidebar-card:first-child{order:2;}}
   </style>
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="About Us — CentralTexas.online">
-  <meta property="og:description" content="CentralTexas.online is a free, independent local business directory for the Central Texas region.">
-  <meta property="og:url" content="https://centraltexas.online/about.html">
-  <meta property="og:site_name" content="CentralTexas.online">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="About Us — CentralTexas.online">
-  <meta name="twitter:description" content="CentralTexas.online is a free, independent local business directory for the Central Texas region.">
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "CentralTexas.online",
-  "url": "https://centraltexas.online",
-  "description": "Free local business directory for Central Texas \u2014 Austin, Round Rock, Georgetown, Cedar Park, Killeen, Temple, Waco, and communities across the region.",
-  "areaServed": {
-    "@type": "State",
-    "name": "Texas"
-  },
-  "foundingDate": "2025",
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "contactType": "customer support",
-    "url": "https://centraltexas.online/contact.html"
-  }
-}
-  </script>
 </head>
 <body>
-  <header class="site-header">
-    <div class="header-inner">
-      <a href="/index.html" class="site-logo">🤠&nbsp;<b>CentralTexas</b>.online</a>
-      <nav class="header-nav" id="mainNav">
-        <a href="/index.html">Directory</a>
-        <a href="/blog.html">Blog</a>
-        <a href="/events.html">Events</a>
-        <a href="/deals.html">Deals</a>
-        <a href="/spotlight.html">Spotlight</a>
-        <a href="/about.html">About</a>
-        <a href="/contact.html">Contact</a>
-        <a href="/add-listing.html" class="btn-add">+ Free Listing</a>
-      </nav>
-      <button class="burger" onclick="document.getElementById('mainNav').classList.toggle('open')">☰</button>
-    </div>
-  </header>
+  <header class="site-header"><div class="header-inner">
+    <a href="/index.html" class="site-logo">&#x1F920; <b>CentralTexas<span style="color:var(--accent)">.online</span></b></a>
+    <nav class="header-nav" id="mainNav">
+      <a href="/index.html">Directory</a><a href="/blog.html">Blog</a><a href="/events.html">Events</a><a href="/deals.html">Deals</a><a href="/about.html" style="color:#fff;font-weight:700;">About</a>
+      <a href="/add-listing.html" class="btn-add">+ Free Listing</a>
+    </nav>
+    <button class="burger" onclick="document.getElementById('mainNav').classList.toggle('open')">&#9776;</button>
+  </div></header>
 
-<div class="page-hero"><h1>About <em>CentralTexas.online</em></h1><p>CentralTexas.online is a free, independent local business directory for the Central Texas region.</p></div>
-<div class="prose-wrap"><div class="prose"><h2>Our Mission</h2>
-<p class="speakable">CentralTexas.online is a free, independent business directory built to help residents of Austin, Round Rock, Georgetown, Cedar Park, Leander, Hutto, Taylor, Florence, Killeen, Temple, Pflugerville, and all of Central Texas find and support local businesses.</p>
-<h2>The Region We Cover</h2>
-<p>Central Texas spans from Waco in the north to San Marcos in the south, with Austin as the cultural and economic hub. We cover this entire corridor — the Austin metro, Williamson County communities, Bell County, McLennan County, and the rural communities in between.</p>
-<h2>How It Works</h2>
-<p>CentralTexas.online is completely free to use and free to list. Browse by category, search by business name or city, and discover local businesses across the region. Business owners submit a free listing through our <a href="/add-listing.html" style="color:var(--accent);">Add Listing page</a>.</p>
-<h2>The Business Spotlight</h2>
-<p>Each month, we feature one Central Texas business in a dedicated <a href="/spotlight.html" style="color:var(--accent);">Business Spotlight</a> article. Spotlights are free, permanent, and celebrate the entrepreneurs making the region great. <a href="/contact.html" style="color:var(--accent);">Nominate a business →</a></p></div></div>
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <div class="logo">🤠 <b>CentralTexas</b>.online</div>
-        <p>The free local business directory for Central Texas — connecting Austin, Round Rock, Georgetown, Cedar Park, Killeen, Temple, and communities across the region.</p>
+<div class="page-hero">
+  <h1>About CentralTexas.online</h1>
+  <p>The free, independent local business directory built for the people, places, and communities that make Central Texas great.</p>
+</div>
+
+<div class="about-body">
+  <div class="about-grid">
+    <main class="prose">
+
+      <h2>&#x1F3E0; Our Mission</h2>
+      <p>CentralTexas.online is a free, independent business directory built to help residents of Round Rock, Cedar Park, Georgetown, Leander, Pflugerville, Killeen, Waco, and every city and small town across the Central Texas corridor find and support the local businesses that make their communities worth living in.</p>
+      <p>We believe local businesses deserve to be found — without paying for placement, without competing against national chains in a pay-to-play system, and without requiring technical expertise to get listed. Every listing on CentralTexas.online is free, permanent, and editable by the business owner at no charge.</p>
+
+      <h2>&#x1F4CD; The Region We Cover</h2>
+      <p>Central Texas is not a single city — it's a 200-mile corridor stretching from McLennan County (Waco) in the north through the Austin metro and Williamson County communities to Hays County in the south, with the Hill Country to the west and the Blackland Prairie to the east. We cover it all:</p>
+      <ul>
+        <li><strong>Williamson County:</strong> Round Rock, Cedar Park, Georgetown, Leander, Pflugerville, Taylor, Hutto, Liberty Hill, Jarrell</li>
+        <li><strong>Hays County:</strong> Kyle, Buda, San Marcos, Wimberley, Dripping Springs</li>
+        <li><strong>Bell County:</strong> Killeen, Temple, Belton</li>
+        <li><strong>McLennan County:</strong> Waco</li>
+        <li><strong>Hill Country Gateway:</strong> Marble Falls, Burnet, Fredericksburg, New Braunfels, Lockhart</li>
+      </ul>
+
+      <h2>&#x1F4DC; The History of Central Texas</h2>
+      <p>Central Texas has one of the richest and most layered histories in North America — a place shaped by Native American nations, Spanish colonizers, German immigrants, cattle barons, cotton farmers, military installations, university towns, and Silicon Hills technology. Understanding this history gives context to the communities we serve today.</p>
+
+      <h3>&#x1F331; Before European Contact</h3>
+      <p>Long before European arrival, Central Texas was home to multiple Native American nations who had inhabited the region for thousands of years. The Tonkawa people occupied the central limestone hills and prairies, living as nomadic hunters following the bison herds that once ranged across the Blackland Prairie in enormous numbers. The Comanche — the dominant military force on the southern Plains from the 18th century — controlled vast territories including the Hill Country and the Edwards Plateau, fiercely resisting European and American expansion. The Lipan Apache occupied the southern Hill Country before being displaced by Comanche pressure. The Wichita confederacy held the northern reaches. These nations shaped the landscape through fire management and bison hunting that created the open prairies that European settlers would later convert to farmland.</p>
+
+      <h3>&#x26F5; Spanish and Mexican Eras (1700s–1836)</h3>
+      <p>Spain established missions along the San Antonio River beginning in the early 1700s, extending their colonial presence northward into what is now Central Texas. El Camino Real — the Royal Road — connected San Antonio to Nacogdoches and passed through the region, establishing the trade and communication routes that would later become Texas Highway corridors. San Marcos, on the spring-fed San Marcos River, was an important waypoint. When Mexico gained independence from Spain in 1821, Central Texas became part of the Mexican state of Coahuila y Texas. The Mexican government opened the region to Anglo-American settlers through the empresario system, granting land contracts to colonizers like Stephen F. Austin who would bring settlers to populate the region.</p>
+
+      <h3>&#x1F1FA;&#x1F1F8; Republic of Texas (1836–1845)</h3>
+      <p>The Texas Revolution of 1835–1836 established the Republic of Texas as an independent nation. Austin was chosen as the capital of the new republic in 1839, despite being on the frontier and exposed to Comanche raids — a controversial decision that reflected the republic's ambition to push westward. Mirabeau Lamar's vision of Texas as a continental empire centered on Austin drove the establishment of infrastructure that would anchor Central Texas's permanent settlement. Georgetown was founded in 1848, Round Rock in 1851. The Republic of Texas era established the land grant system that distributed the region's extraordinary amounts of acreage to settlers and created the property ownership patterns that still shape Central Texas land use today.</p>
+
+      <h3>&#x1F1E9;&#x1F1EA; German Immigration and the Hill Country (1840s–1870s)</h3>
+      <p>One of the most significant and often overlooked chapters in Central Texas history is the mass migration of German immigrants beginning in the 1840s. The Adelsverein — a German colonization society — organized the settlement of German immigrants in the Texas Hill Country, establishing New Braunfels in 1845 and Fredericksburg in 1846. Tens of thousands of German-speaking immigrants followed over the next two decades, establishing a cultural footprint that remains visible today: the architecture, the breweries, the Wurst Fest, the Germanic place names, and the unusually strong German language preservation that made Hill Country Texas communities unique in American immigrant history. New Braunfels's Comal River and Fredericksburg's Main Street reflect this heritage directly.</p>
+
+      <h3>&#x1F68E; Post-Civil War and the Cattle Era (1865–1900)</h3>
+      <p>Central Texas emerged from the Civil War as a major cattle production region. The Chisholm Trail — one of America's most famous cattle drives routes — ran directly through the heart of Central Texas, with the main trail passing through Georgetown, Round Rock, and Austin before continuing north to Kansas railheads. Round Rock's Rock Street crossing gave the city its name and made it a significant Chisholm Trail waypoint. This era also saw the region's most famous outlaw: Sam Bass, who robbed Union Pacific trains across Nebraska before meeting his end in Round Rock in 1878 in a gunfight that made the city's name known across the country. The arrival of the International-Great Northern Railroad through Round Rock in 1876 began the shift from cattle drives to agricultural shipping that would define the next era.</p>
+
+      <h3>&#x1F33E; Agricultural Era and Small Town Growth (1880s–1940s)</h3>
+      <p>Central Texas's fertile Blackland Prairie soils — some of the most productive cotton-growing land in the American South — drove an agricultural economy that shaped the region for generations. Georgetown became a significant cotton market. Taylor (founded 1876) became one of the most important cotton markets in Texas, its prosperity reflected in the Victorian commercial architecture that still anchors its historic downtown. Lockhart developed as a regional agricultural center. Bell County's Killeen remained a small agricultural town until World War II fundamentally changed its character. Williamson County developed the small-town main street culture — courthouse squares, locally owned merchants, family farms — that persists as historical character in Georgetown's and Taylor's historic districts today.</p>
+
+      <h3>&#x2708;&#xFE0F; Fort Hood and the Military Transformation (1942–Present)</h3>
+      <p>World War II transformed Central Texas's northern communities permanently. Fort Hood (now Fort Hood), established in 1942 on 340 square miles of former ranch and farmland, became one of the largest military installations in the world and the anchor of Bell County's economy. Killeen transformed from a small agricultural town of 1,500 to a city of 150,000+ driven entirely by the military base's presence. The installation has been home to the 1st Cavalry Division and III Corps, deployed to every major American military conflict since Korea. Fort Hood's renaming in 2023 honored Medal of Honor recipient Sergeant First Class Lorne Cavazos, reflecting both the base's evolution and Central Texas's Mexican-American military heritage.</p>
+
+      <h3>&#x1F4BB; The Technology Revolution and Modern Growth (1980s–Present)</h3>
+      <p>The arrival of technology industry fundamentally reshaped Central Texas beginning in the 1980s. Michael Dell founded Dell Technologies from his University of Texas dorm room in 1984; the company's Round Rock headquarters, established in 1994, anchored the IH-35 technology corridor that has since attracted IBM, Apple, Samsung, Oracle, Tesla, and hundreds of technology companies to the region. Austin's emergence as "Silicon Hills" — a technology cluster comparable to Silicon Valley — drove the extraordinary population growth that has made Williamson County one of the fastest-growing counties in the United States for over two decades. The Round Rock tech corridor, the Cedar Park 183A development, Georgetown's Sun City retirement community, Hutto's Samsung chip fabrication facility, and the extraordinary expansion of every city along the IH-35 corridor reflect the technology-driven demographic transformation of a region that was still primarily agricultural within living memory.</p>
+
+      <h3>&#x1F4C8; Central Texas Today</h3>
+      <p>Central Texas in 2026 is one of the most dynamic regions in America — growing faster than almost anywhere else in the country, attracting residents from every state and nation, and navigating the tension between the development pressure that growth brings and the natural beauty, small-town character, and community identity that make the region worth moving to. Williamson County's population has more than tripled in 20 years. The Highland Lakes serve as the outdoor recreation anchor. The Hill Country wine trail has produced a nationally recognized wine region. The BBQ culture centered on Lockhart and Taylor maintains its authenticity against tourist pressure. And the small cities that were farming communities a generation ago — Kyle, Buda, Hutto, Liberty Hill — are becoming the next Round Rock and Cedar Park, building the infrastructure and community character that transforms a collection of subdivisions into a genuine city.</p>
+
+      <h2>&#x1F4F0; About This Directory</h2>
+      <p>CentralTexas.online launched to fill a genuine gap: a local business directory that covers the full Central Texas region rather than just one city, that is permanently free rather than pay-to-play, and that is built by someone who lives here and understands the communities it serves.</p>
+      <p>Every business listing is written with genuine knowledge of the local market. Every city guide reflects real community character. The blog covers the topics — cedar fever, wildflower season, the Lockhart BBQ pilgrimage, buying a home in Williamson County — that Central Texas residents actually need to know.</p>
+
+      <h2>&#x1F4E7; Contact</h2>
+      <p>Have a business to list? A correction to submit? A question about the directory? Use our <a href="/add-listing.html">listing submission form</a> or <a href="/contact.html">contact page</a>. We read every message and respond to genuine inquiries.</p>
+
+    </main>
+
+    <aside>
+      <div class="sidebar-card">
+        <h3>&#x1F4CA; Directory at a Glance</h3>
+        <div class="stat-row">
+          <div class="stat-box"><div class="num">400+</div><div class="lbl">Businesses</div></div>
+          <div class="stat-box"><div class="num">24</div><div class="lbl">Cities</div></div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-box"><div class="num">48+</div><div class="lbl">Categories</div></div>
+          <div class="stat-box"><div class="num">93</div><div class="lbl">Blog Posts</div></div>
+        </div>
+        <p style="font-size:.82rem;color:var(--text-muted);margin-top:8px;">Covering the full Central Texas corridor from Waco to New Braunfels and the Hill Country to the east.</p>
       </div>
-      <div class="footer-col">
-        <h4>Explore</h4>
-        <a href="/index.html">Browse Directory</a>
-        <a href="/blog.html">Blog &amp; Guides</a>
-        <a href="/events.html">Events Calendar</a>
-        <a href="/deals.html">Deals &amp; Specials</a>
-        <a href="/spotlight.html">Business Spotlight</a>
+
+      <div class="upgrade-card">
+        <h3>&#x2B50; Upgrade to Featured</h3>
+        <p>Free listings include your business name, address, phone, hours, and description. Featured listings add:</p>
+        <ul style="margin:0 0 14px 16px;font-size:.83rem;opacity:.9;">
+          <li>Photo gallery</li>
+          <li>Special offers & deals</li>
+          <li>Social media links</li>
+          <li>Priority placement</li>
+          <li>Verified badge</li>
+        </ul>
+        <a href="/add-listing.html">&#x2B50; Learn About Featured &rarr;</a>
       </div>
-      <div class="footer-col">
-        <h4>Business Owners</h4>
-        <a href="/add-listing.html">Add Free Listing</a>
-        <a href="/advertise.html">Advertise With Us</a>
-        <a href="/spotlight.html">Get Spotlighted</a>
-        <a href="/contact.html">Contact Us</a>
+
+      <div class="sidebar-card">
+        <h3>&#x1F30E; Cities We Cover</h3>
+        <ul>
+          <li><a href="/round-rock.html" style="color:var(--primary);">Round Rock</a></li>
+          <li><a href="/cedar-park.html" style="color:var(--primary);">Cedar Park</a></li>
+          <li><a href="/georgetown.html" style="color:var(--primary);">Georgetown</a></li>
+          <li><a href="/killeen.html" style="color:var(--primary);">Killeen</a></li>
+          <li><a href="/waco.html" style="color:var(--primary);">Waco</a></li>
+          <li><a href="/lockhart.html" style="color:var(--primary);">Lockhart</a></li>
+          <li><a href="/fredericksburg.html" style="color:var(--primary);">Fredericksburg</a></li>
+          <li><a href="/new-braunfels.html" style="color:var(--primary);">New Braunfels</a></li>
+          <li><a href="/wimberley.html" style="color:var(--primary);">Wimberley</a></li>
+          <li><a href="/dripping-springs.html" style="color:var(--primary);">Dripping Springs</a></li>
+          <li><a href="/marble-falls.html" style="color:var(--primary);">Marble Falls</a></li>
+          <li><a href="/san-marcos.html" style="color:var(--primary);">San Marcos</a></li>
+        </ul>
       </div>
-      <div class="footer-col">
-        <h4>Company</h4>
-        <a href="/about.html">About Us</a>
-        <a href="/new-to-central-texas.html">New Resident Guide</a>
-        <a href="/privacy.html">Privacy Policy</a>
-        <a href="/terms.html">Terms of Service</a>
+
+      <div class="sidebar-card">
+        <h3>&#x1F4DA; Top Local Guides</h3>
+        <ul>
+          <li><a href="/blog/lockhart-bbq-guide.html" style="color:var(--primary);">Lockhart BBQ Guide</a></li>
+          <li><a href="/blog/texas-wildflower-season-guide.html" style="color:var(--primary);">Wildflower Season</a></li>
+          <li><a href="/blog/cedar-fever-guide.html" style="color:var(--primary);">Cedar Fever Survival</a></li>
+          <li><a href="/blog/highland-lakes-weekend-guide.html" style="color:var(--primary);">Highland Lakes Weekend</a></li>
+          <li><a href="/blog/buying-home-central-texas-2026.html" style="color:var(--primary);">Buying a Home in Central Texas</a></li>
+          <li><a href="/blog/central-texas-new-resident-checklist.html" style="color:var(--primary);">New Resident Checklist</a></li>
+        </ul>
       </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2026 CentralTexas.online — Independent local business directory.</span>
-      <span><a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></span>
-    </div>
-  </footer>
-  <script>
-    document.addEventListener('click',function(e){
-      var nav=document.getElementById('mainNav'),burger=document.querySelector('.burger');
-      if(nav&&!nav.contains(e.target)&&burger&&!burger.contains(e.target))nav.classList.remove('open');
-    });
-  </script>
-</body>
-</html>
+    </aside>
+  </div>
+</div>
+
+<div class="cta-band">
+  <h2>List Your Business Free — Forever</h2>
+  <p>No credit card. No expiration. No catch. Basic listings on CentralTexas.online are permanently free.</p>
+  <a href="/add-listing.html">+ Add Your Business &rarr;</a>
+</div>
+
+  <footer class="site-footer"><div class="footer-inner">
+    <div class="footer-brand"><div class="logo">&#x1F920; <b>CentralTexas<span style="color:var(--accent)">.online</span></b></div><p>Free local business directory for Central Texas.</p></div>
+    <div class="footer-col"><h4>Directory</h4><a href="/index.html">All Businesses</a><a href="/restaurants.html">Restaurants</a><a href="/electricians.html">Electricians</a><a href="/add-listing.html">Add Listing</a></div>
+    <div class="footer-col"><h4>Cities</h4><a href="/round-rock.html">Round Rock</a><a href="/cedar-park.html">Cedar Park</a><a href="/georgetown.html">Georgetown</a><a href="/killeen.html">Killeen</a></div>
+    <div class="footer-col"><h4>Company</h4><a href="/about.html">About</a><a href="/blog.html">Blog</a><a href="/events.html">Events</a><a href="/contact.html">Contact</a></div>
+  </div><div class="footer-bottom"><span>&copy; 2026 CentralTexas.online</span><span>Made with &#10084; in Central Texas</span></div></footer>
+  <script>document.querySelector('.burger').addEventListener('click',()=>{document.getElementById('mainNav').classList.toggle('open');});</script>
+</body></html>

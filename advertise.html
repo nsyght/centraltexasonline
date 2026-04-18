@@ -1,151 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="canonical" href="https://centraltexas.online/advertise.html">
-  <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#1D4E89">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <title>Advertise With Us — CentralTexas.online</title>
-  <meta name="description" content="Reach Central Texas residents where they're already looking for local businesses.">
+  <title>Advertise With Us | CentralTexas.online</title>
+  <meta name="description" content="Grow your Central Texas business on CentralTexas.online. Free standard listings, featured placements, and sponsored opportunities reaching Round Rock, Cedar Park, Georgetown, and all of Central Texas.">
   <style>
+    :root{--primary:#1D4E89;--primary-dark:#0F2D54;--primary-pale:#E8F0FB;--accent:#E8821A;--dark:#0A1628;--white:#fff;--gray-50:#F7F9FC;--gray-100:#EDF1F8;--gray-200:#D5DEF0;--text:#0A1628;--text-muted:#4A5A7A;--radius:12px;--shadow:0 2px 16px rgba(0,0,0,.08);}
+    *{box-sizing:border-box;margin:0;padding:0;}body{font-family:'Inter',sans-serif;background:var(--gray-50);color:var(--text);}a{color:inherit;text-decoration:none;}
+    .site-header{background:var(--dark);position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.3);}.header-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;gap:20px;height:64px;}.site-logo{display:flex;align-items:center;gap:10px;font-size:1.2rem;font-weight:800;color:#fff;white-space:nowrap;}.site-logo b{color:var(--accent);}.header-nav{display:flex;align-items:center;gap:4px;flex:1;}.header-nav a{color:rgba(255,255,255,.8);font-size:.82rem;font-weight:500;padding:6px 10px;border-radius:6px;}.header-nav .btn-add{margin-left:auto;background:var(--accent);color:#fff!important;padding:8px 14px;border-radius:8px;font-weight:700;font-size:.82rem;}.burger{display:none;cursor:pointer;color:#fff;font-size:1.4rem;margin-left:auto;}
 
-    :root {
-      --primary: #1D4E89;
-      --primary-dark: #0F2D54;
-      --primary-light: #3A6DB5;
-      --primary-pale: #E8F0FB;
-      --accent: #E8821A;
-      --accent-dark: #C06A0E;
-      --accent-pale: #FEF3E7;
-      --dark: #0A1628;
-      --dark2: #122040;
-      --white: #FFFFFF;
-      --gray-50: #F7F9FC;
-      --gray-100: #EDF1F8;
-      --gray-200: #D5DEF0;
-      --text: #0A1628;
-      --text-muted: #4A5A7A;
-      --radius: 10px;
-      --shadow: 0 2px 12px rgba(0,0,0,.07);
-      --shadow-lg: 0 8px 32px rgba(0,0,0,.13);
-    }
+    /* HERO */
+    .adv-hero{background:linear-gradient(135deg,var(--dark) 0%,var(--primary-dark) 60%,#1a4a7a 100%);color:#fff;padding:72px 20px;text-align:center;}
+    .adv-hero .eyebrow{font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:var(--accent);margin-bottom:16px;}
+    .adv-hero h1{font-size:clamp(2.2rem,5vw,3.4rem);font-weight:800;line-height:1.15;margin-bottom:18px;}
+    .adv-hero h1 em{color:var(--accent);font-style:normal;}
+    .adv-hero p{font-size:1.08rem;opacity:.85;max-width:580px;margin:0 auto 36px;line-height:1.7;}
+    .hero-stats{display:flex;justify-content:center;gap:48px;flex-wrap:wrap;}
+    .hero-stat .num{font-size:2rem;font-weight:800;color:var(--accent);}.hero-stat .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;opacity:.7;font-weight:600;}
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Inter', sans-serif; background: var(--gray-50); color: var(--text); }
-    a { color: inherit; text-decoration: none; }
-    img { display: block; max-width: 100%; }
-    .site-header { background: var(--dark); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,.3); }
-    .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; align-items: center; gap: 20px; height: 64px; }
-    .site-logo { display: flex; align-items: center; gap: 10px; font-size: 1.2rem; font-weight: 800; color: var(--white); white-space: nowrap; }
-    .site-logo b { color: var(--accent); }
-    .header-nav { display: flex; align-items: center; gap: 4px; flex: 1; flex-wrap: wrap; }
-    .header-nav a { color: rgba(255,255,255,.8); font-size: .82rem; font-weight: 500; padding: 6px 10px; border-radius: 6px; transition: color .2s, background .2s; }
-    .header-nav a:hover { color: var(--white); background: rgba(255,255,255,.1); }
-    .header-nav .btn-add { margin-left: auto; background: var(--accent); color: var(--white) !important; padding: 8px 14px; border-radius: 8px; font-weight: 700; font-size: .82rem; }
-    .header-nav .btn-add:hover { background: var(--accent-dark) !important; }
-    .burger { display: none; cursor: pointer; color: var(--white); font-size: 1.4rem; margin-left: auto; }
-    .site-footer { background: var(--dark); color: rgba(255,255,255,.7); margin-top: 60px; }
-    .footer-inner { max-width: 1200px; margin: 0 auto; padding: 48px 20px 20px; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; }
-    .footer-brand .logo { font-size: 1.1rem; font-weight: 800; color: var(--white); margin-bottom: 10px; }
-    .footer-brand .logo b { color: var(--accent); }
-    .footer-brand p { font-size: .85rem; line-height: 1.6; }
-    .footer-col h4 { color: var(--white); font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 14px; }
-    .footer-col a { display: block; font-size: .85rem; color: rgba(255,255,255,.6); padding: 3px 0; }
-    .footer-col a:hover { color: var(--accent); }
-    .footer-bottom { max-width: 1200px; margin: 0 auto; padding: 16px 20px; border-top: 1px solid rgba(255,255,255,.1); display: flex; justify-content: space-between; font-size: .78rem; color: rgba(255,255,255,.4); }
-    @media(max-width:900px) { .footer-inner { grid-template-columns: 1fr 1fr; } }
-    @media(max-width:640px) { .header-nav { display: none; flex-direction: column; position: absolute; top: 64px; left: 0; right: 0; background: var(--dark2); padding: 12px 20px 20px; gap: 4px; } .header-nav.open { display: flex; } .header-nav .btn-add { margin-left: 0; text-align: center; } .burger { display: block; } .footer-inner { grid-template-columns: 1fr; gap: 24px; } }
+    /* PLANS */
+    .plans-section{max-width:1100px;margin:0 auto;padding:64px 20px;}
+    .section-title{text-align:center;font-size:1.6rem;font-weight:800;margin-bottom:8px;}
+    .section-sub{text-align:center;color:var(--text-muted);margin-bottom:48px;font-size:1rem;}
+    .plans-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+    .plan-card{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:32px 28px;position:relative;border:2px solid var(--gray-100);display:flex;flex-direction:column;}
+    .plan-card.featured{border-color:var(--accent);box-shadow:0 4px 28px rgba(232,130,26,.2);}
+    .plan-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;padding:4px 18px;border-radius:20px;font-size:.75rem;font-weight:700;white-space:nowrap;}
+    .plan-name{font-size:1.1rem;font-weight:800;margin-bottom:6px;}
+    .plan-price{font-size:2rem;font-weight:800;color:var(--primary);margin-bottom:4px;}
+    .plan-price span{font-size:.95rem;font-weight:500;color:var(--text-muted);}
+    .plan-desc{font-size:.85rem;color:var(--text-muted);margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid var(--gray-100);}
+    .plan-features{list-style:none;margin-bottom:28px;flex:1;}
+    .plan-features li{font-size:.88rem;color:var(--text-muted);padding:7px 0;border-bottom:1px solid var(--gray-50);display:flex;align-items:flex-start;gap:10px;line-height:1.5;}
+    .plan-features li::before{content:'✓';color:#2E7D32;font-weight:800;font-size:.9rem;flex-shrink:0;margin-top:1px;}
+    .plan-btn{display:block;text-align:center;padding:13px;border-radius:8px;font-weight:700;font-size:.95rem;margin-top:auto;}
+    .plan-btn.secondary{border:2px solid var(--primary);color:var(--primary);}
+    .plan-btn.primary{background:var(--primary);color:#fff;}
+    .plan-btn.accent{background:var(--accent);color:#fff;}
 
-    .page-hero { background: linear-gradient(135deg, var(--dark), var(--primary)); color: var(--white); padding: 56px 20px; text-align: center; }
-    .page-hero h1 { font-size: clamp(1.7rem,4vw,2.5rem); font-weight: 800; margin-bottom: 10px; }
-    .page-hero h1 em { color: var(--accent); font-style: normal; }
-    .page-hero p { opacity: .86; max-width: 540px; margin: 0 auto; font-size: .97rem; line-height: 1.6; }
-    .prose-wrap { max-width: 860px; margin: 40px auto; padding: 0 20px 60px; }
-    .prose { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); padding: 36px; line-height: 1.8; color: var(--text-muted); margin-bottom: 24px; }
-    .prose h2 { font-size: 1.1rem; font-weight: 700; color: var(--text); margin: 28px 0 10px; }
-    .prose h2:first-child { margin-top: 0; }
-    .prose a { color: var(--accent); }
-    .prose p { margin-bottom: 14px; font-size: .95rem; }
+    /* OTHER OPTIONS */
+    .other-section{background:#fff;border-top:1px solid var(--gray-100);}
+    .other-inner{max-width:1100px;margin:0 auto;padding:64px 20px;}
+    .other-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:40px;}
+    .other-card{background:var(--gray-50);border-radius:var(--radius);padding:28px;border:1px solid var(--gray-100);}
+    .other-card .icon{font-size:2rem;margin-bottom:14px;}
+    .other-card h3{font-size:1rem;font-weight:700;margin-bottom:8px;}
+    .other-card p{font-size:.88rem;color:var(--text-muted);line-height:1.7;}
+
+    /* CTA BOTTOM */
+    .cta-bottom{background:linear-gradient(135deg,var(--primary-dark),var(--primary));color:#fff;padding:64px 20px;text-align:center;}
+    .cta-bottom h2{font-size:1.8rem;font-weight:800;margin-bottom:12px;}
+    .cta-bottom p{opacity:.85;margin-bottom:28px;font-size:1rem;max-width:520px;margin-left:auto;margin-right:auto;}
+    .cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+    .btn-white{display:inline-block;background:#fff;color:var(--primary);padding:13px 28px;border-radius:8px;font-weight:700;font-size:.95rem;}
+    .btn-orange{display:inline-block;background:var(--accent);color:#fff;padding:13px 28px;border-radius:8px;font-weight:700;font-size:.95rem;}
+
+    /* FOOTER */
+    .site-footer{background:var(--dark);color:rgba(255,255,255,.7);}.footer-inner{max-width:1200px;margin:0 auto;padding:48px 20px 20px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;}.footer-brand .logo{font-size:1.1rem;font-weight:800;color:#fff;margin-bottom:10px;}.footer-brand .logo b{color:var(--accent);}.footer-col h4{color:#fff;font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px;}.footer-col a{display:block;font-size:.85rem;color:rgba(255,255,255,.6);padding:3px 0;}.footer-bottom{max-width:1200px;margin:0 auto;padding:16px 20px;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;font-size:.78rem;color:rgba(255,255,255,.4);}
+    @media(max-width:900px){.plans-grid,.other-grid{grid-template-columns:1fr;}.header-nav{display:none;}.burger{display:block;}.footer-inner{grid-template-columns:1fr;gap:24px;}.hero-stats{gap:28px;}}
   </style>
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Advertise With Us — CentralTexas.online">
-  <meta property="og:description" content="Reach Central Texas residents where they're already looking for local businesses.">
-  <meta property="og:url" content="https://centraltexas.online/advertise.html">
-  <meta property="og:site_name" content="CentralTexas.online">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Advertise With Us — CentralTexas.online">
-  <meta name="twitter:description" content="Reach Central Texas residents where they're already looking for local businesses.">
 </head>
 <body>
-  <header class="site-header">
-    <div class="header-inner">
-      <a href="/index.html" class="site-logo">🤠&nbsp;<b>CentralTexas</b>.online</a>
-      <nav class="header-nav" id="mainNav">
-        <a href="/index.html">Directory</a>
-        <a href="/blog.html">Blog</a>
-        <a href="/events.html">Events</a>
-        <a href="/deals.html">Deals</a>
-        <a href="/spotlight.html">Spotlight</a>
-        <a href="/about.html">About</a>
-        <a href="/contact.html">Contact</a>
-        <a href="/add-listing.html" class="btn-add">+ Free Listing</a>
-      </nav>
-      <button class="burger" onclick="document.getElementById('mainNav').classList.toggle('open')">☰</button>
-    </div>
-  </header>
+  <header class="site-header"><div class="header-inner">
+    <a href="/index.html" class="site-logo">&#x1F920; <b>CentralTexas<span style="color:var(--accent)">.online</span></b></a>
+    <nav class="header-nav" id="mainNav">
+      <a href="/index.html">Directory</a><a href="/blog.html">Blog</a><a href="/events.html">Events</a><a href="/deals.html">Deals</a><a href="/about.html">About</a>
+      <a href="/add-listing.html" class="btn-add">+ Free Listing</a>
+    </nav>
+    <button class="burger" onclick="document.getElementById('mainNav').classList.toggle('open')">&#9776;</button>
+  </div></header>
 
-<div class="page-hero"><h1>Advertise on <em>CentralTexas.online</em></h1><p>Reach Central Texas residents where they're already looking for local businesses.</p></div>
-<div class="prose-wrap"><div class="prose"><h2>Why Advertise With CentralTexas.online?</h2>
-<p>CentralTexas.online is the independent local business directory for Austin, Round Rock, Georgetown, Cedar Park, Killeen, Temple, Pflugerville, and all of Central Texas. Every visitor is actively looking for local businesses in the region.</p>
-<h2>Advertising Options</h2>
-<p><strong>Free Listing</strong> — All businesses receive a free standard directory listing with contact info, hours, address, and a map.</p>
-<p><strong>Featured Listing ($29/month)</strong> — Priority placement, featured badge, photo gallery, and deals posting.</p>
-<p><strong>Business Spotlight ($149/month)</strong> — Monthly spotlight article, dedicated blog post, and homepage featured placement.</p>
-<h2>Get Started</h2>
-<p><a href="/contact.html" style="color:var(--accent);">Contact us</a> to discuss advertising options for your Central Texas business.</p></div></div>
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <div class="logo">🤠 <b>CentralTexas</b>.online</div>
-        <p>The free local business directory for Central Texas — connecting Austin, Round Rock, Georgetown, Cedar Park, Killeen, Temple, and communities across the region.</p>
+  <!-- HERO -->
+  <div class="adv-hero">
+    <div class="eyebrow">Grow Your Business</div>
+    <h1>Reach <em>Central Texas</em> Residents</h1>
+    <p>CentralTexas.online connects local businesses with thousands of residents actively searching for services across Round Rock, Cedar Park, Georgetown, Killeen, Waco, and 20+ cities.</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="num">400+</div><div class="lbl">Business Listings</div></div>
+      <div class="hero-stat"><div class="num">24</div><div class="lbl">Cities Covered</div></div>
+      <div class="hero-stat"><div class="num">Free</div><div class="lbl">Base Listing Forever</div></div>
+      <div class="hero-stat"><div class="num">SEO</div><div class="lbl">Google Indexed Pages</div></div>
+    </div>
+  </div>
+
+  <!-- PLANS -->
+  <div class="plans-section">
+    <h2 class="section-title">Advertising Options</h2>
+    <p class="section-sub">Start free and upgrade when you're ready. No contracts, no hidden fees.</p>
+    <div class="plans-grid">
+
+      <!-- BASIC -->
+      <div class="plan-card">
+        <div class="plan-name">Basic</div>
+        <div class="plan-price">Free <span>/ forever</span></div>
+        <p class="plan-desc">Get found by Central Texas residents searching for your category.</p>
+        <ul class="plan-features">
+          <li>Standard directory listing</li>
+          <li>Business name, address &amp; phone</li>
+          <li>Hours of operation</li>
+          <li>Business description</li>
+          <li>Google Maps link</li>
+          <li>Category &amp; city badge</li>
+        </ul>
+        <a href="/add-listing.html" class="plan-btn secondary">Get Listed Free</a>
       </div>
-      <div class="footer-col">
-        <h4>Explore</h4>
-        <a href="/index.html">Browse Directory</a>
-        <a href="/blog.html">Blog &amp; Guides</a>
-        <a href="/events.html">Events Calendar</a>
-        <a href="/deals.html">Deals &amp; Specials</a>
-        <a href="/spotlight.html">Business Spotlight</a>
+
+      <!-- FEATURED -->
+      <div class="plan-card featured">
+        <div class="plan-badge">&#x2B50; Most Popular</div>
+        <div class="plan-name">Featured</div>
+        <div class="plan-price">$25 <span>/ month</span></div>
+        <p class="plan-desc">Stand out at the top of your category with premium placement and rich content.</p>
+        <ul class="plan-features">
+          <li>Everything in Basic</li>
+          <li>Priority placement in category</li>
+          <li>&#x2B50; Featured badge on directory card</li>
+          <li>Orange highlight border</li>
+          <li>Photo gallery (up to 6 photos)</li>
+          <li>Extended business description</li>
+          <li>Social media links (Facebook, Instagram, etc.)</li>
+          <li>Special offers &amp; deals section</li>
+        </ul>
+        <a href="/contact.html" class="plan-btn accent">Get Featured</a>
       </div>
-      <div class="footer-col">
-        <h4>Business Owners</h4>
-        <a href="/add-listing.html">Add Free Listing</a>
-        <a href="/advertise.html">Advertise With Us</a>
-        <a href="/spotlight.html">Get Spotlighted</a>
-        <a href="/contact.html">Contact Us</a>
+
+      <!-- SPONSORED -->
+      <div class="plan-card">
+        <div class="plan-name">Sponsored</div>
+        <div class="plan-price">$75 <span>/ month</span></div>
+        <p class="plan-desc">Maximum exposure across the entire directory and beyond.</p>
+        <ul class="plan-features">
+          <li>Everything in Featured</li>
+          <li>Homepage spotlight section</li>
+          <li>Category page banner</li>
+          <li>Monthly blog feature post</li>
+          <li>Newsletter mention</li>
+          <li>Social media shoutout</li>
+          <li>Priority customer support</li>
+        </ul>
+        <a href="/contact.html" class="plan-btn primary">Contact Us</a>
       </div>
-      <div class="footer-col">
-        <h4>Company</h4>
-        <a href="/about.html">About Us</a>
-        <a href="/new-to-central-texas.html">New Resident Guide</a>
-        <a href="/privacy.html">Privacy Policy</a>
-        <a href="/terms.html">Terms of Service</a>
+
+    </div>
+  </div>
+
+  <!-- OTHER OPTIONS -->
+  <div class="other-section">
+    <div class="other-inner">
+      <h2 class="section-title">Other Ways to Advertise</h2>
+      <p class="section-sub">Custom options for businesses that want something specific.</p>
+      <div class="other-grid">
+
+        <div class="other-card">
+          <div class="icon">&#x1F4F0;</div>
+          <h3>Business Spotlight Blog Post</h3>
+          <p>We write a dedicated blog post about your business — your story, services, and what makes you special. Great for SEO and brand awareness. Includes promotion across the site and internal links from related pages.</p>
+        </div>
+
+        <div class="other-card">
+          <div class="icon">&#x1F5C2;</div>
+          <h3>Category Sponsorship</h3>
+          <p>Be the exclusive sponsor of a category page — for example, the Restaurants page or the Auto Repair page. Your banner appears at the top whenever a visitor filters to that category, putting you in front of the highest-intent audience.</p>
+        </div>
+
+        <div class="other-card">
+          <div class="icon">&#x1F3D9;&#xFE0F;</div>
+          <h3>City Guide Sponsorship</h3>
+          <p>Sponsor a city guide page for your home city — Round Rock, Cedar Park, Georgetown, Killeen, or any of our 24 covered cities. Your business appears prominently at the top of the city page that residents and newcomers visit for local recommendations.</p>
+        </div>
+
+        <div class="other-card">
+          <div class="icon">&#x1F91D;</div>
+          <h3>Community Partnership</h3>
+          <p>Non-profits, neighborhood associations, schools, chambers of commerce, and community organizations — we love local partnerships. Reach out to discuss custom arrangements that serve the Central Texas community.</p>
+        </div>
+
       </div>
     </div>
-    <div class="footer-bottom">
-      <span>© 2026 CentralTexas.online — Independent local business directory.</span>
-      <span><a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></span>
+  </div>
+
+  <!-- BOTTOM CTA -->
+  <div class="cta-bottom">
+    <h2>Ready to Get Started?</h2>
+    <p>Your free listing takes less than 5 minutes. For featured and sponsored placements, reach out and we'll have you set up within 24 hours.</p>
+    <div class="cta-btns">
+      <a href="/add-listing.html" class="btn-white">+ Add Free Listing</a>
+      <a href="/contact.html" class="btn-orange">Contact Us About Advertising &rarr;</a>
     </div>
-  </footer>
-  <script>
-    document.addEventListener('click',function(e){
-      var nav=document.getElementById('mainNav'),burger=document.querySelector('.burger');
-      if(nav&&!nav.contains(e.target)&&burger&&!burger.contains(e.target))nav.classList.remove('open');
-    });
-  </script>
-</body>
-</html>
+  </div>
+
+  <footer class="site-footer"><div class="footer-inner">
+    <div class="footer-brand"><div class="logo">&#x1F920; <b>CentralTexas<span style="color:var(--accent)">.online</span></b></div><p>Free local business directory for Central Texas.</p></div>
+    <div class="footer-col"><h4>Directory</h4><a href="/index.html">All Businesses</a><a href="/restaurants.html">Restaurants</a><a href="/electricians.html">Electricians</a><a href="/add-listing.html">Add Listing</a></div>
+    <div class="footer-col"><h4>Cities</h4><a href="/round-rock.html">Round Rock</a><a href="/cedar-park.html">Cedar Park</a><a href="/georgetown.html">Georgetown</a><a href="/killeen.html">Killeen</a></div>
+    <div class="footer-col"><h4>Company</h4><a href="/about.html">About</a><a href="/advertise.html">Advertise</a><a href="/blog.html">Blog</a><a href="/contact.html">Contact</a></div>
+  </div><div class="footer-bottom"><span>&copy; 2026 CentralTexas.online</span><span>Made with &#10084; in Central Texas</span></div></footer>
+  <script>document.querySelector('.burger').addEventListener('click',()=>{document.getElementById('mainNav').classList.toggle('open');});</script>
+</body></html>
