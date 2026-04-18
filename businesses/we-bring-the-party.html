@@ -16,12 +16,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <title>We Bring The Party, LLC — CentralTexas.online | Florence, TX</title>
   <meta name="description" content="Serving Williamson County and surrounding Central Texas with bounce houses, water slides, and party rentals. We Bring The Party LLC makes event planning simple — they handle the fun, you enjoy it.">
-  <script type="application/ld+json">
-{
+  <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "We Bring The Party, LLC",
-  "description": "Serving Williamson County and surrounding Central Texas with bounce houses, water slides, and party rentals. We Bring The Party LLC makes event planning simple — they handle the fun, you enjoy it.",
+  "description": "Serving Williamson County and surrounding Central Texas with bounce houses, water slides, and party rentals. We Bring The Party LLC makes event planning simple \u2014 they handle the fun, you enjoy it.",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "205 Cutting Horse Ln",
@@ -30,17 +29,25 @@
     "addressCountry": "US"
   },
   "telephone": "(737) 980-5867",
-  "openingHours": "By appointment — call to book",
-  "speakable": { "@type": "SpeakableSpecification", "cssSelector": [".speakable"] }
-,
+  "openingHours": "By appointment \u2014 call to book",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [
+      ".speakable"
+    ]
+  },
   "url": "https://centraltexas.online/businesses/we-bring-the-party.html",
   "areaServed": {
-  "@type": "City",
-  "name": "Florence",
-  "addressRegion": "TX"
-}
-}
-  </script>
+    "@type": "City",
+    "name": "Florence",
+    "addressRegion": "TX"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 30.8385,
+    "longitude": -97.7939
+  }
+}</script>
   <style>
 
     :root {
@@ -267,6 +274,11 @@
       </div>
       <p style="font-size:.8rem;color:#4A5A7A;text-align:center;">&#x2B50; Send photos to <a href="mailto:photos@centraltexas.online" style="color:#1D4E89;font-weight:600;">photos@centraltexas.online</a> &mdash; added within 24 hrs.</p>
     </div>
+        <div class="info-card" id="hours-section">
+      <h2>&#x1F550; Hours &amp; Availability <span id="open-closed-badge" style="display:none;align-items:center;padding:4px 12px;border-radius:20px;font-size:.78rem;font-weight:700;margin-left:10px;"></span></h2>
+      <div style="font-size:.9rem;color:#0A1628;font-weight:500;padding:4px 0;">By appointment — call to book</div>
+      <p style="font-size:.78rem;color:#4A5A7A;margin-top:8px;">Hours may vary. Call ahead to confirm availability for your event date.</p>
+    </div>
     <div class="info-card" id="social-links">
       <h2>&#x1F310; Social Media</h2>
       <a href="https://www.facebook.com/webringtheparty" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:10px;background:#F7F9FC;border-radius:8px;padding:10px 14px;border:1px solid #EDF1F8;margin-bottom:6px;text-decoration:none;">
@@ -274,6 +286,16 @@
       </a>
       <a href="https://www.instagram.com/webringtheparty" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:10px;background:#F7F9FC;border-radius:8px;padding:10px 14px;border:1px solid #EDF1F8;text-decoration:none;">
         <span style="font-size:1.1rem;">&#x1F4F7;</span><span style="font-size:.88rem;font-weight:600;color:#0A1628;flex:1;">Instagram</span><span style="font-size:.75rem;color:#1D4E89;">Visit &#8594;</span>
+      </a>
+      <a href="https://x.com/webringtheparty" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:10px;background:#F7F9FC;border-radius:8px;padding:10px 14px;border:1px solid #EDF1F8;margin-bottom:6px;text-decoration:none;">
+        <span style="font-size:1.1rem;">&#x1D54F;</span>
+        <span style="font-size:.88rem;font-weight:600;color:#0A1628;flex:1;">X (Twitter)</span>
+        <span style="font-size:.75rem;color:#1D4E89;">Visit &#8594;</span>
+      </a>
+      <a href="https://www.youtube.com/@webringtheparty" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:10px;background:#F7F9FC;border-radius:8px;padding:10px 14px;border:1px solid #EDF1F8;margin-bottom:6px;text-decoration:none;">
+        <span style="font-size:1.1rem;">&#x25B6;&#xFE0F;</span>
+        <span style="font-size:.88rem;font-weight:600;color:#0A1628;flex:1;">YouTube</span>
+        <span style="font-size:.75rem;color:#1D4E89;">Visit &#8594;</span>
       </a>
     </div>
     <div class="info-card">
@@ -360,5 +382,47 @@
 
 </div>
 </div>
+<script>
+(function(){
+  var schemas=document.querySelectorAll('script[type="application/ld+json"]');
+  var hours=null;
+  for(var i=0;i<schemas.length;i++){
+    try{var s=JSON.parse(schemas[i].textContent);if(s.openingHours){hours=s.openingHours;break;}}catch(e){}
+  }
+  if(!hours)return;
+  var badge=document.getElementById('open-closed-badge');
+  if(!badge)return;
+  var now=new Date();
+  var day=now.getDay();
+  var dayMap={Mo:1,Tu:2,We:3,Th:4,Fr:5,Sa:6,Su:0};
+  var nowMins=now.getHours()*60+now.getMinutes();
+  var isOpen=false;
+  var hoursArr=Array.isArray(hours)?hours:[hours];
+  hoursArr.forEach(function(h){
+    if(typeof h!=='string')return;
+    var parts=h.split(' ');if(parts.length<2)return;
+    var dayPart=parts[0];var timePart=parts[1];
+    var times=timePart.split('-');if(times.length<2)return;
+    var startMins=parseInt(times[0].split(':')[0])*60+parseInt(times[0].split(':')[1]);
+    var endMins=parseInt(times[1].split(':')[0])*60+parseInt(times[1].split(':')[1]);
+    var dayMatch=false;
+    if(dayPart.indexOf('-')>-1){
+      var dParts=dayPart.split('-');
+      var startDay=dayMap[dParts[0]];var endDay=dayMap[dParts[1]];
+      if(startDay<=endDay){dayMatch=day>=startDay&&day<=endDay;}
+      else{dayMatch=day>=startDay||day<=endDay;}
+    }else{dayMatch=((['Su','Mo','Tu','We','Th','Fr','Sa'][day])===dayPart);}
+    if(dayMatch&&nowMins>=startMins&&nowMins<endMins)isOpen=true;
+  });
+  badge.style.display='inline-flex';
+  if(isOpen){
+    badge.innerHTML='<span style="width:8px;height:8px;background:#22C55E;border-radius:50%;margin-right:6px;flex-shrink:0;"></span>Open Now';
+    badge.style.cssText+='background:#F0FDF4;color:#15803D;border:1.5px solid #BBF7D0;';
+  }else{
+    badge.innerHTML='<span style="width:8px;height:8px;background:#EF4444;border-radius:50%;margin-right:6px;flex-shrink:0;"></span>Closed Now';
+    badge.style.cssText+='background:#FEF2F2;color:#B91C1C;border:1.5px solid #FECACA;';
+  }
+})();
+</script>
 </body>
 </html>
