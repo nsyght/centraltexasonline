@@ -129,11 +129,39 @@
   {"@type":"ListItem","position":3,"name":"Georgetown Veterinary Hospital","item":"https://centraltexas.online/businesses/georgetown-veterinary-hospital.html"}
 ]}
 </script>
+
+  <style>
+    .upgrade-bar{background:#FFFBF5;border-bottom:3px solid var(--accent,#E8821A);padding:14px 20px 16px;text-align:center;}
+    .upgrade-bar-text{font-size:.88rem;color:var(--text-muted,#4A5A7A);margin-bottom:10px;line-height:1.5;}
+    .upgrade-bar-text strong{color:var(--text,#0A1628);}
+    .free-badge{display:inline-flex;align-items:center;gap:5px;background:#EDF7ED;color:#2E7D32;border:1.5px solid #A5D6A7;border-radius:20px;padding:2px 10px;font-size:.75rem;font-weight:700;margin-right:6px;vertical-align:middle;}
+    .upgrade-btn{display:inline-block;background:var(--accent,#E8821A);color:#fff;padding:9px 22px;border-radius:8px;font-size:.88rem;font-weight:700;margin-top:2px;}
+    .upgrade-btn:hover{background:#C06A0E;color:#fff;}
+  </style>
+
+  <style>
+    /* Photo gallery placeholders */
+    .photos-section { }
+    .photo-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-bottom:14px; }
+    .photo-placeholder { background:var(--gray-100,#EDF1F8); border-radius:8px; aspect-ratio:4/3; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; color:var(--text-muted,#4A5A7A); border:2px dashed var(--gray-200,#D5DEF0); }
+    .photo-placeholder .ph-icon { font-size:1.8rem; opacity:.4; }
+    .photo-placeholder .ph-text { font-size:.72rem; font-weight:600; opacity:.5; }
+    .locked-upgrade { background:linear-gradient(135deg,var(--primary-pale,#E8F0FB),#fff); border:1.5px solid var(--primary,#1D4E89); border-radius:10px; padding:14px 16px; text-align:center; }
+    .locked-upgrade .lock-icon { font-size:1.4rem; margin-bottom:6px; display:block; }
+    .locked-upgrade p { font-size:.82rem; color:var(--text-muted,#4A5A7A); margin-bottom:10px; line-height:1.5; }
+    .locked-upgrade a { display:inline-block; background:var(--accent,#E8821A); color:#fff; padding:8px 18px; border-radius:8px; font-size:.82rem; font-weight:700; }
+    /* Social links locked */
+    .social-locked { display:flex; flex-direction:column; gap:8px; }
+    .social-row { display:flex; align-items:center; gap:10px; background:var(--gray-50,#F7F9FC); border-radius:8px; padding:10px 14px; opacity:.5; filter:blur(0px); }
+    .social-row .s-icon { font-size:1.1rem; }
+    .social-row .s-name { font-size:.85rem; font-weight:600; color:var(--text,#0A1628); flex:1; }
+    .social-row .s-lock { font-size:.8rem; color:var(--text-muted,#4A5A7A); }
+  </style>
 </head>
 <body>
   <header class="site-header">
     <div class="header-inner">
-      <a href="/index.html" class="site-logo">🤠&nbsp;<b>CentralTexas</b>.online</a>
+      <a href="/index.html" class="site-logo">🤠 <b>CentralTexas<span style="color:var(--accent)">.online</span></b></a>
       <nav class="header-nav" id="mainNav">
         <a href="/index.html">Directory</a>
         <a href="/blog.html">Blog</a>
@@ -153,8 +181,12 @@
   <a href="/georgetown.html">Georgetown</a><span>›</span>
   Georgetown Veterinary Hospital
 </div>
+<div class="upgrade-bar">
+  <div class="upgrade-bar-text"><span class="free-badge">&#x1F193; Free Forever</span>This is a <strong>free standard listing</strong> &mdash; upgrade to Featured to unlock photos, special offers, social links &amp; priority placement</div>
+  <a href="/add-listing.html" class="upgrade-btn">&#x2B50; Upgrade to Featured &rarr;</a>
+</div>
 <div class="back-bar" style="display:none"><a href="/index.html" class="back-link">← Back to Directory</a></div>
-<div class="biz-hero">
+<div class="biz-hero biz-hero-photo" style="background:linear-gradient(rgba(10,22,40,.6),rgba(10,22,40,.6)),url(/images/places/georgetown-veterinary-hospital.jpg) center/cover no-repeat;">
   <div class="biz-hero-inner">
     <div class="biz-icon-lg">🐾</div>
     <div>
@@ -170,7 +202,7 @@
     <div class="info-card">
       <h2>📋 Business Information</h2>
       <div class="info-row"><span class="info-icon">📞</span><div><a href="tel:5128633563" class="speakable">(512) 863-3563</a></div></div>
-      <div class="info-row"><span class="info-icon">📍</span><div><a href="https://maps.google.com/?q=Georgetown+Veterinary+Hospital+Georgetown+TX" target="_blank" class="speakable">2707 S Austin Ave, Georgetown, TX 78626</a></div></div>
+      <div class="info-row"><span class="info-icon">📍</span><div><a href="https://www.google.com/maps/search/?api=1&query=Georgetown+Veterinary+Hospital+Georgetown+TX" target="_blank" class="speakable">2707 S Austin Ave, Georgetown, TX 78626</a></div></div>
       <div class="info-row"><span class="info-icon">🕐</span><div class="speakable">Mon–Fri 7:30am–5:30pm, Sat 8am–12pm</div></div>
       <div class="info-row"><span class="info-icon">🌐</span><div><a href="https://gtvet.com" target="_blank" rel="noopener">gtvet.com</a></div></div>
       <div class="info-row"><span class="info-icon">⭐</span><div class="speakable">4.8 stars · 1,530 reviews on Google</div></div>
@@ -184,12 +216,12 @@
   <aside>
     <div class="action-btns">
       <a href="tel:5128633563" class="action-btn">📞 Call Now</a>
-      <a href="https://maps.google.com/?q=Georgetown+Veterinary+Hospital+Georgetown+TX" target="_blank" class="action-btn outline">📍 Directions</a>
+      <a href="https://www.google.com/maps/search/?api=1&query=Georgetown+Veterinary+Hospital+Georgetown+TX" target="_blank" class="action-btn outline">📍 Directions</a>
       <a href="https://gtvet.com" target="_blank" class="action-btn">🌐 Website</a>
     </div>
     <div class="info-card">
       <h2>📍 Map</h2>
-      <iframe class="map-embed" src="https://maps.google.com/maps?q=Georgetown+Veterinary+Hospital+Georgetown+TX&output=embed" loading="lazy" allowfullscreen title="Map of Georgetown Veterinary Hospital"></iframe>
+      <iframe class="map-embed" src="https://maps.google.com/maps?q=Georgetown+Veterinary+Hospital+Georgetown+TX&output=embed&z=15" loading="lazy" allowfullscreen title="Map of Georgetown Veterinary Hospital"></iframe>
     </div>
     <div class="info-card" style="text-align:center;background:var(--gray-100);">
       <p style="font-size:.83rem;color:var(--text-muted);margin-bottom:10px;">Is this your business?</p>
@@ -200,7 +232,7 @@
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-brand">
-        <div class="logo">🤠 <b>CentralTexas</b>.online</div>
+        <div class="logo">🤠 <b>CentralTexas<span style="color:var(--accent)">.online</span></b></div>
         <p>The free local business directory for Central Texas — connecting Austin, Round Rock, Georgetown, Cedar Park, Killeen, Temple, Waco, and communities across the region.</p>
       </div>
       <div class="footer-col">
